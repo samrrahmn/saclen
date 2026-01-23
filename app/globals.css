@@ -1,0 +1,57 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Poppins:wght@100..900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  max-width: 100%;
+}
+
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: Inter, sans-serif;
+}
+
+h1,
+h2,
+h3 {
+  font-family: Poppins, sans-serif;
+  color: #1f2933;
+  font-weight: 500;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee-track {
+  animation: marquee 30s linear infinite;
+}
+
+
+.container {
+  @apply px-6 py-12 max-w-7xl mt-16 mx-auto lg:px-8 lg:mt-10;
+}
+
+.anchor-hover {
+  @apply border-b border-dotted border-y-gray-300 hover:border-solid hover:border-gray-500;
+}
+.gradient-hover-outer {
+  @apply p-[1px] bg-slate-200 hover:bg-gradient-to-br hover:from-red-200 hover:via-purple-200 hover:to-yellow-200;
+}
+.gradient-hover-inner {
+  @apply bg-slate-50 group-hover:bg-gradient-to-br group-hover:from-red-50 group-hover:via-purple-50 group-hover:to-yellow-50;
+}
+.h2-style {
+  @apply text-5xl leading-normal font-semibold max-w-2xl;
+}
