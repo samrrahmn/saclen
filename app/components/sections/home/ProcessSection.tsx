@@ -28,7 +28,7 @@ export default function ProcessSection() {
 
   return (
     <section className="w-full py-24 px-4">
-      <div className="max-w-7xl mx-auto bg-gray-100 rounded-xl py-20 px-6 md:px-12">
+      <div className="max-w-7xl mx-auto bg-gray-50 border rounded-xl py-20 px-6 md:px-12">
         <h2 className="text-center text-[40px] md:text-[48px] font-semibold text-black mb-16">
           Simple Process. Serious Results.
         </h2>
