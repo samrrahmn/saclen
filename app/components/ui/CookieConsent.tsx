@@ -32,8 +32,8 @@ export default function CookieConsent() {
   if (!visible) return null;
 
   return (
-    <div className="fixed bottom-6 right-6 z-[9999]">
-      <div className="max-w-sm rounded-xl border border-gray-200 bg-white px-6 py-5 shadow-lg">
+    <div className="fixed bottom-6 left-6 z-[9999]">
+      <div className="max-w-sm rounded-xl border border-gray-200 bg-white px-6 py-5">
         <p className="text-sm text-gray-600 mb-4 leading-relaxed">
           We use cookies to improve your experience. Read our{" "}
           <Link

@@ -56,7 +56,7 @@ function Logo({ src }: { src: string }) {
       alt="Company logo"
       width={140}
       height={60}
-      className="h-7 w-auto object-contain brightness-0 opacity-80 hover:opacity-100 transition"
+      className="h-7 w-auto object-contain brightness-0 opacity-80"
     />
   );
 }
