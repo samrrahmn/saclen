@@ -33,7 +33,7 @@ export default function FAQSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <section id="faq" className="container py-24">
+    <section id="faqs" className="container py-24">
       {/* Heading */}
       <div className="text-center max-w-2xl mx-auto mb-12">
         <h2 className="text-[28px] sm:text-[36px] md:text-[44px] font-semibold leading-[1.1] text-gray-900">

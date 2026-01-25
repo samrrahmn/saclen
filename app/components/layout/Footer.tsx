@@ -91,7 +91,7 @@ export default function Footer() {
                   <Link href="/">Home</Link>
                 </li>
                 <li>
-                  <Link href="#services">Services</Link>
+                  <Link href="/#services">Services</Link>
                 </li>
                 <li>
                   <Link href="/contact">Contact</Link>
@@ -109,10 +109,10 @@ export default function Footer() {
                   <Link href="/blog">Blog</Link>
                 </li>
                 <li>
-                  <Link href="/case-study">Guides</Link>
+                  <Link href="/guides">Guides</Link>
                 </li>
                 <li>
-                  <Link href="#faqs">FAQs</Link>
+                  <Link href="/#faqs">FAQs</Link>
                 </li>
               </ul>
             </div>
