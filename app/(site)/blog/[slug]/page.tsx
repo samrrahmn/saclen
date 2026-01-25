@@ -6,7 +6,6 @@ import { client } from "@/lib/sanityClient";
 import CTASection from "@/app/components/sections/shared/CTASection";
 import AISummarizeCard from "@/app/(site)/blog/AISummarizeCard";
 
-
 /* ================= Types ================= */
 
 type Post = {
@@ -225,9 +224,7 @@ const portableComponents = {
                               >
                                 <PortableText
                                   value={
-                                    Array.isArray(cell)
-                                      ? cell
-                                      : cell.text || []
+                                    Array.isArray(cell) ? cell : cell.text || []
                                   }
                                 />
                               </div>
@@ -263,13 +260,13 @@ const portableComponents = {
 
   block: {
     h2: ({ children }: any) => (
-      <h2 className="text-[32px] md:text-[34px] font-semibold text-gray-900 mt-20 mb-6 tracking-tight">
+      <h2 className="text-[25px] md:text-[30px] font-semibold text-gray-900 mt-20 mb-6 tracking-tight">
         {children}
       </h2>
     ),
 
     h3: ({ children }: any) => (
-      <h3 className="text-[24px] font-semibold text-gray-900 mt-12 mb-4">
+      <h3 className="text-[20px] md:text-[25px] font-semibold text-gray-900 mt-12 mb-4">
         {children}
       </h3>
     ),
@@ -309,15 +306,17 @@ export default async function SingleBlogPage({
   return (
     <main className="pt-28 bg-white">
       <div className="max-w-7xl mx-auto px-6">
-
         {/* ===== TOP HEADER ===== */}
         <div className="max-w-3xl mx-auto mb-20">
-
           {/* Breadcrumb */}
           <div className="text-[14px] text-gray-500 mb-8 flex flex-wrap items-center gap-2">
-            <Link href="/" className="hover:text-gray-900">Home</Link>
+            <Link href="/" className="hover:text-gray-900">
+              Home
+            </Link>
             <span className="text-gray-400">›</span>
-            <Link href="/blog" className="hover:text-gray-900">Blog</Link>
+            <Link href="/blog" className="hover:text-gray-900">
+              Blog
+            </Link>
 
             {post.categories?.[0]?.title && (
               <>
@@ -330,7 +329,7 @@ export default async function SingleBlogPage({
           </div>
 
           {/* Title */}
-          <h1 className="text-[48px] md:text-[60px] font-semibold text-gray-900 leading-[1.05] tracking-tight mb-8">
+          <h1 className="text-[40px] md:text-[50px] font-semibold text-gray-900 leading-[1.05] tracking-tight mb-8">
             {post.title}
           </h1>
 
@@ -384,53 +383,50 @@ export default async function SingleBlogPage({
           </article>
         </div>
 
-          {/* ===== RELATED POSTS ===== */}
-          {relatedPosts.length > 0 && (
-            <div className="mt-40">
+        {/* ===== RELATED POSTS ===== */}
+        {relatedPosts.length > 0 && (
+          <div className="mt-40">
+            <h2 className="text-[34px] font-semibold text-gray-900 mb-12">
+              Related Articles
+            </h2>
 
-              <h2 className="text-[34px] font-semibold text-gray-900 mb-12">
-                Related Articles
-              </h2>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-16">
-
-                {relatedPosts.map((p: any) => (
-                  <Link
-                    key={p.slug.current}
-                    href={`/blog/${p.slug.current}`}
-                    className="group block"
-                  >
-                    {/* Image */}
-                    {p.mainImage?.asset?.url && (
-                      <div className="relative w-full aspect-video overflow-hidden rounded-lg mb-4">
-                        <Image
-                          src={p.mainImage.asset.url}
-                          alt={p.title}
-                          fill
-                          className="object-cover transition-transform duration-500 group-hover:scale-[1.04]"
-                        />
-                      </div>
-                    )}
-
-                    {/* Date */}
-                    <div className="text-sm text-gray-500 mb-2">
-                      {new Date(p.publishedAt).toLocaleDateString("en-US", {
-                        year: "numeric",
-                        month: "short",
-                        day: "numeric",
-                      })}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-16">
+              {relatedPosts.map((p: any) => (
+                <Link
+                  key={p.slug.current}
+                  href={`/blog/${p.slug.current}`}
+                  className="group block"
+                >
+                  {/* Image */}
+                  {p.mainImage?.asset?.url && (
+                    <div className="relative w-full aspect-video overflow-hidden rounded-lg mb-4">
+                      <Image
+                        src={p.mainImage.asset.url}
+                        alt={p.title}
+                        fill
+                        className="object-cover transition-transform duration-500 group-hover:scale-[1.04]"
+                      />
                     </div>
+                  )}
 
-                    {/* Title */}
-                    <h3 className="text-[20px] leading-snug font-semibold text-gray-900 mb-2 transition-colors">
-                      {p.title}
-                    </h3>
-                  </Link>
-                ))}
+                  {/* Date */}
+                  <div className="text-sm text-gray-500 mb-2">
+                    {new Date(p.publishedAt).toLocaleDateString("en-US", {
+                      year: "numeric",
+                      month: "short",
+                      day: "numeric",
+                    })}
+                  </div>
 
-              </div>
+                  {/* Title */}
+                  <h3 className="text-[20px] leading-snug font-semibold text-gray-900 mb-2 transition-colors group-hover:underline">
+                    {p.title}
+                  </h3>
+                </Link>
+              ))}
             </div>
-          )}
+          </div>
+        )}
 
         {/* ===== CTA ===== */}
         <CTASection />

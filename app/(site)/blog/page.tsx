@@ -59,19 +59,8 @@ export default async function BlogPage() {
   return (
     <main className="py-28 bg-white">
       <div className="max-w-7xl mx-auto px-6">
-        {/* ===== PAGE HEADER ===== */}
-        <div className="text-center max-w-2xl mx-auto mb-20">
-          <h1 className="text-[28px] sm:text-[36px] md:text-[44px] font-semibold leading-[1.1] text-gray-900">
-            Build smarter products with web and AI automation.
-          </h1>
-          <p className="mt-4 text-[16px] sm:text-[18px] text-gray-600 leading-[1.7]">
-            Insights, guides, and practical articles on building scalable
-            websites, SaaS products, and AI-powered systems.
-          </p>
-        </div>
-
         {/* ===== POSTS GRID ===== */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-[60px] gap-y-16">
           {posts.map((post) => (
             <Link
               key={post._id}
@@ -100,7 +89,7 @@ export default async function BlogPage() {
               </div>
 
               {/* Title */}
-              <h2 className="text-[20px] leading-snug font-semibold text-gray-900 mb-2 transition-colors group-hover:text-blue-700">
+              <h2 className="text-[20px] leading-snug font-semibold text-gray-900 mb-2 transition-colors group-hover:underline">
                 {post.title}
               </h2>
 
