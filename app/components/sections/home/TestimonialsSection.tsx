@@ -1,63 +1,62 @@
 "use client";
 
-import { useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
 const testimonials = [
   {
-    rating: 5,
-    text: "They built a custom CRM-style system for us very quickly and it turned out excellent. The team was extremely knowledgeable and easy to work with.",
+    rating: 4.9,
+    text: "They built a custom internal tool for our team and it works exactly as we needed. The process was smooth and communication was very clear.",
     title: "Client Review",
-    subtitle: "Custom CRM Development",
+    subtitle: "Internal Tool Development",
+  },
+  {
+    rating: 4.8,
+    text: "We used them to automate our invoice and reporting workflow and it saved us a lot of manual work every week.",
+    title: "Client Review",
+    subtitle: "Business Process Automation",
   },
   {
     rating: 5,
-    text: "Easy to work with and delivered everything exactly as requested. Communication was smooth and professional throughout.",
+    text: "Project went smoothly with good communication and the final system matched our requirements very well.",
     title: "Client Review",
-    subtitle: "Invoice Automation System",
+    subtitle: "Custom Web Application",
   },
   {
-    rating: 5,
-    text: "Project ran very well with great communication and we were very satisfied with the final product and delivery timeline.",
-    title: "Client Review",
-    subtitle: "B2B SaaS Platform",
-  },
-  {
-    rating: 5,
-    text: "The team was incredibly helpful in finding the right technical solution for our business. Highly recommended.",
+    rating: 4.7,
+    text: "They helped us choose the right stack and build a simple but scalable platform for our operations.",
     title: "Client Review",
     subtitle: "Platform Development",
   },
   {
     rating: 5,
-    text: "I couldn't be happier with their work. True professionals across the board with great attention to detail.",
+    text: "Very professional and detail-oriented. The quality of the work was exactly what we were looking for.",
     title: "Client Review",
-    subtitle: "App Consulting",
+    subtitle: "Custom Software Development",
   },
   {
     rating: 4.8,
-    text: "Great communicator and skilled developer. They helped design the system architecture and delivered a great prototype.",
+    text: "Good communication and solid technical skills. They designed the system architecture and delivered a working prototype.",
     title: "Client Review",
-    subtitle: "Product Prototype",
+    subtitle: "Product Prototype Development",
   },
   {
-    rating: 5,
-    text: "The team was highly responsive and proactive during the project. Very flexible with changes and improvements.",
+    rating: 4.9,
+    text: "They were very flexible with feedback and changes during the project and improved the product step by step.",
     title: "Client Review",
     subtitle: "MVP Development",
   },
   {
     rating: 5,
-    text: "Fantastic to work with. Clear communication and very high quality work. We will continue working with them.",
+    text: "They automated several manual tasks for our team and integrated everything into our existing system.",
     title: "Client Review",
-    subtitle: "AI Automation System",
+    subtitle: "AI Automation Integration",
   },
   {
-    rating: 5,
-    text: "Great experience overall. Fast delivery, great communication, and excellent technical execution.",
+    rating: 4.8,
+    text: "Fast delivery and clean implementation. The communication was clear from start to finish.",
     title: "Client Review",
-    subtitle: "Web App Development",
+    subtitle: "Web Application Development",
   },
 ];
 

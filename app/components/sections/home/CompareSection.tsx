@@ -34,7 +34,7 @@ export default function CompareSection() {
         {/* Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
           {/* Other Agencies */}
-          <div className="rounded-2xl border border-gray-200 bg-gray-50 p-8">
+          <div className="rounded-xl border border-gray-200 bg-gray-50 p-8">
             <div className="text-sm font-semibold text-gray-500 uppercase tracking-wide">
               Other agencies
             </div>
@@ -68,7 +68,7 @@ export default function CompareSection() {
           </div>
 
           {/* Saclen Atlas */}
-          <div className="rounded-2xl bg-primary p-8 text-white relative overflow-hidden">
+          <div className="rounded-xl bg-primary p-8 text-white relative overflow-hidden">
             {/* Top brand */}
             <div className="text-[13px] font-semibold uppercase tracking-widest text-white/80">
               Saclen Atlas

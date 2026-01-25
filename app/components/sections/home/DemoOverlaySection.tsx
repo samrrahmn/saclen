@@ -17,7 +17,7 @@ export default function DemoOverlaySection() {
         </div>
 
         {/* Demo Card */}
-        <div className="relative rounded-xl overflow-hidden border border-gray-200">
+        <div className="rounded-md md:rounded-xl overflow-hidden border border-gray-200">
           {/* Background Image */}
           <Image
             src="/assets/dashboard.png"
@@ -27,18 +27,6 @@ export default function DemoOverlaySection() {
             className="w-full h-auto object-cover"
             priority
           />
-
-          {/* Dark Overlay */}
-          <div className="absolute inset-0 bg-black/60" />
-
-          {/* Center Button */}
-          <div className="absolute inset-0 flex items-center justify-center">
-            <div className="bg-black/80 backdrop-blur-md p-4 sm:p-8 rounded-lg">
-              <button className="px-5 py-3 sm:px-10 sm:py-4 rounded-lg bg-primary text-white font-semibold text-sm sm:text-lg shadow-lg shadow-blue-500/30 hover:opacity-90 transition">
-                Book a free call
-              </button>
-            </div>
-          </div>
         </div>
       </div>
     </section>

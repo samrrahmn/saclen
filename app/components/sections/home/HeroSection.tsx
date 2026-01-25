@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
+import Link from "next/link";
 
 export default function HeroSection() {
   useEffect(() => {}, []);
@@ -20,8 +21,8 @@ export default function HeroSection() {
 
         {/* Heading */}
         <h1 className="text-[40px] sm:text-[50px] md:text-[56px] lg:text-[64px] font-semibold leading-[1.05] max-w-4xl tracking-tight">
-          Building the systems that{" "}
-          <br className="hidden sm:block" /> run your business
+          Building the systems that <br className="hidden sm:block" /> run your
+          business
         </h1>
 
         {/* Sub heading */}
@@ -32,17 +33,22 @@ export default function HeroSection() {
 
         {/* Buttons */}
         <div className="mt-10 flex gap-4 flex-col sm:flex-row w-full sm:w-auto justify-center">
-          <button className="h-[50px] w-full sm:w-auto px-8  rounded-lg text-white bg-primary hover:opacity-90 transition">
-            Book a call
-          </button>
-          <button className="h-[50px] w-full sm:w-auto px-8 rounded-lg bg-white border border-gray-300 shadow-sm hover:bg-gray-50 transition">
-            Contact Us
-          </button>
+          <Link href="/book-a-call">
+            <button className="h-[50px] w-full sm:w-auto px-8 rounded-lg text-white bg-primary hover:opacity-90 transition">
+              Book a call
+            </button>
+          </Link>
+
+          <Link href="/contact">
+            <button className="h-[50px] w-full sm:w-auto px-8 rounded-lg bg-white border border-gray-300 shadow-sm hover:bg-gray-50 transition">
+              Contact
+            </button>
+          </Link>
         </div>
 
         {/* Video */}
         <div className="mt-20 w-full flex justify-center">
-          <div className="rounded-2xl overflow-hidden border border-gray-200 bg-gray-100">
+          <div className="rounded-md md:rounded-xl overflow-hidden border border-gray-200 bg-gray-100">
             <video
               src="https://cdn.sanity.io/files/eqofnbwr/production/4dd06707b237dada9fa3af370db8901a50dd1133.mov"
               autoPlay

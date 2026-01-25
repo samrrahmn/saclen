@@ -4,28 +4,28 @@ import { useState } from "react";
 
 const faqs = [
   {
-    q: "What services do you provide?",
-    a: "We provide custom web development, SaaS development, and AI automation solutions tailored to your business needs.",
+    q: "How much does a project usually cost?",
+    a: "Project cost depends on scope, features, and complexity. Most custom projects start from a few thousand dollars and increase based on design, integrations, and automation requirements. After reviewing your needs, we provide a clear fixed or milestone-based quote.",
   },
   {
-    q: "What type of projects do you usually work on?",
-    a: "We work on custom websites, internal business systems, SaaS platforms, dashboards, and AI-powered automation tools.",
+    q: "How long does a project take?",
+    a: "Timelines depend on scope, but most projects take between 2 to 8 weeks. Larger SaaS platforms or automation-heavy systems may take longer depending on complexity and feedback cycles.",
   },
   {
-    q: "Do you build everything from scratch?",
-    a: "Yes. Every project is designed and developed from scratch based on your requirements, goals, and workflows.",
+    q: "What tech stack do you use?",
+    a: "We use modern stacks like Next.js, React, Node.js, Tailwind, and cloud platforms. For no-code projects, we use tools like Webflow, Framer, Airtable, and automation platforms depending on what fits your use case best.",
   },
   {
-    q: "Who are your services for?",
-    a: "Our services are for startups, growing companies, and established businesses that want to build custom software or automate operations.",
+    q: "Should we use no-code or custom development?",
+    a: "It depends on your goals, budget, and scale. We often start with no-code for speed and cost efficiency, and use custom development when you need more control, performance, or long-term scalability.",
   },
   {
-    q: "Can you integrate with our existing tools and systems?",
-    a: "Absolutely. We can integrate with your existing website, CRM, databases, and third-party tools without disrupting your current workflow.",
+    q: "Do you provide support after launch?",
+    a: "Yes. We provide ongoing support, maintenance, and improvements after launch to ensure your system stays stable, secure, and up to date.",
   },
   {
-    q: "How do you use AI in your projects?",
-    a: "We integrate AI models and automation systems to streamline processes, improve efficiency, and build smarter software solutions.",
+    q: "How do we get started?",
+    a: "Simply book a call or send us a message with your idea or problem. We’ll review it, ask a few questions, and suggest the best next steps.",
   },
 ];
 

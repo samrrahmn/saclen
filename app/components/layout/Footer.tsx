@@ -75,7 +75,7 @@ export default function Footer() {
                     : status === "success"
                       ? "Subscribed"
                       : status === "error"
-                        ? "Try Again"
+                        ? "Failed"
                         : "Subscribe"}
                 </button>
               </form>
@@ -94,10 +94,7 @@ export default function Footer() {
                   <Link href="#services">Services</Link>
                 </li>
                 <li>
-                  <Link href="#pricing">Pricing</Link>
-                </li>
-                <li>
-                  <Link href="#contact">Contact</Link>
+                  <Link href="/contact">Contact</Link>
                 </li>
               </ul>
             </div>
@@ -112,13 +109,10 @@ export default function Footer() {
                   <Link href="/blog">Blog</Link>
                 </li>
                 <li>
-                  <Link href="/case-study">Case Study</Link>
+                  <Link href="/case-study">Guides</Link>
                 </li>
                 <li>
                   <Link href="#faqs">FAQs</Link>
-                </li>
-                <li>
-                  <Link href="#newsletter">Newsletter</Link>
                 </li>
               </ul>
             </div>

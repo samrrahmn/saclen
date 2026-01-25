@@ -25,7 +25,7 @@ export default function CTASection() {
               </button>
             </Link>
 
-            <Link href="/demo" className="w-full sm:w-auto">
+            <Link href="/book-a-call" className="w-full sm:w-auto">
               <button className="h-[52px] w-full sm:w-auto px-8 rounded-lg text-white border text-[16px] font-medium hover:opacity-90 transition">
                 Book a Call
               </button>
