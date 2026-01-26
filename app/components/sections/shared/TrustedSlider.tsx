@@ -16,7 +16,7 @@ const logos = [
 
 export default function TrustedCompaniesSection() {
   return (
-    <section className="md:py-20 overflow-hidden bg-white">
+    <section className="py-10 md:py-[60px] overflow-hidden bg-white">
       <Container>
         <p className="text-center text-gray-500 mb-10 text-md">
           Trusted by modern ecosystems

@@ -44,24 +44,14 @@ export default function Header() {
             </Link>
           </div>
 
-          {/* Desktop Buttons */}
-          <div className="hidden lg:flex flex-1 justify-end items-center gap-3">
-            {/* Contact Button */}
+          {/* Desktop Contact Button */}
+          <div className="hidden lg:flex flex-1 justify-end">
             <Link
               href="/contact"
-              className="flex items-center border border-gray-300 px-5 py-2 rounded-md font-display font-medium text-gray-900"
+              className="flex gap-2 items-center border border-gray-400 px-4 py-2 rounded-lg"
             >
-              Contact
-            </Link>
-
-            {/* Book a Call Button */}
-            <Link
-              href="/book-a-call"
-              className="flex items-center bg-primary hover:opacity-90 px-6 py-2 rounded-md font-display font-medium"
-            >
-              <span className="font-display font-medium text-white">
-                Book a call
-              </span>
+              <span className="font-display font-medium">Get Started</span>
+              <i className="fa-solid fa-arrow-right"></i>
             </Link>
           </div>
 
@@ -113,24 +103,6 @@ export default function Header() {
             >
               Support
             </Link>
-
-            {/* Mobile Buttons */}
-            <div className="mt-4 flex flex-col gap-3">
-              <Link
-                href="/contact"
-                onClick={() => setOpen(false)}
-                className="flex justify-center border border-gray-300 px-5 py-2 rounded-md font-medium text-gray-900"
-              >
-                Contact
-              </Link>
-              <Link
-                href="/book-a-call"
-                onClick={() => setOpen(false)}
-                className="flex justify-center bg-primary px-6 py-2 rounded-md font-medium text-white"
-              >
-                Book a call
-              </Link>
-            </div>
           </div>
         </div>
       )}

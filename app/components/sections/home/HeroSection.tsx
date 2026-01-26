@@ -11,58 +11,42 @@ export default function HeroSection() {
       id="hero"
       className="bg-gradient-to-b from-slate-50 via-blue-50/40 to-transparent"
     >
-      {/* Hero */}
-      <div className="mx-auto max-w-7xl px-6 pt-24 pb-28 flex flex-col items-center text-center">
-        {/* Small Badge */}
-        <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-blue-200 bg-blue-50 px-4 py-1.5 text-sm font-medium text-blue-700">
-          <span className="h-2 w-2 rounded-full bg-blue-500" />
-          Modern Web & AI Automation
+      {/* Top Content */}
+      <div className="max-w-4xl mx-auto px-6 pt-[50px] pb-16 flex flex-col sm:items-center sm:text-center sm:pt-[80px] sm:max-w-3xl">
+        {/* Badge */}
+        <div className="flex items-center my-6 gap-2 border border-yellow-300 bg-yellow-50 rounded-lg px-3 py-1 w-fit shadow-md hover:shadow-lg hover:-translate-y-1 transition group">
+          <div className="w-2 h-2 bg-yellow-400 rounded-full border border-yellow-600" />
+          <p className="font-medium text-yellow-600">
+            <span className="text-yellow-800">
+              Digital Systems & Automation
+            </span>
+          </p>
+          <i className="fa-solid fa-arrow-right text-yellow-600 group-hover:translate-x-1 transition duration-300" />
         </div>
 
         {/* Heading */}
-        <h1 className="text-[40px] sm:text-[50px] md:text-[56px] lg:text-[64px] font-semibold leading-[1.05] max-w-4xl tracking-tight">
-          Building the systems that <br className="hidden sm:block" /> run your
-          business
+        <h1 className="text-4xl font-semibold leading-snug mt-4 sm:text-6xl">
+          Building intelligent systems for businesses
         </h1>
 
-        {/* Sub heading */}
-        <p className="text-[18px] sm:text-[20px] md:text-[22px] mt-6 text-gray-700 max-w-3xl leading-[1.7]">
-          Saclen Atlas builds modern websites and AI automation systems that
-          streamline your operations and scale your business.
+        <p className="text-lg mt-4 sm:text-2xl sm:mt-8 text-gray-800">
+          We help companies design and build websites, web applications, and
+          automation systems to improve operations.
         </p>
 
         {/* Buttons */}
-        <div className="mt-10 flex gap-4 flex-col sm:flex-row w-full sm:w-auto justify-center">
-          <Link href="/book-a-call">
-            <button className="h-[50px] w-full sm:w-auto px-8 rounded-lg text-white bg-primary hover:opacity-90 transition">
+        <div className="mt-12 flex gap-4 flex-col sm:flex-row sm:justify-center w-full">
+          <Link href="/book-a-call" className="w-full sm:w-auto">
+            <span className="block text-center px-8 py-3 font-semibold rounded-lg text-white bg-primary shadow-sm hover:bg-opacity-90">
               Book a call
-            </button>
+            </span>
           </Link>
 
-          <Link href="/contact">
-            <button className="h-[50px] w-full sm:w-auto px-8 rounded-lg bg-white border border-gray-300 shadow-sm hover:bg-gray-50 transition">
-              Contact
-            </button>
+          <Link href="/contact" className="w-full sm:w-auto">
+            <span className="block text-center px-8 py-3 font-semibold rounded-lg bg-white border border-gray-400">
+              Contact Us
+            </span>
           </Link>
-        </div>
-
-        {/* Video */}
-        <div className="mt-20 w-full flex justify-center">
-          <div className="rounded-md md:rounded-xl overflow-hidden border border-gray-200 bg-gray-100">
-            <video
-              src="https://cdn.sanity.io/files/eqofnbwr/production/4dd06707b237dada9fa3af370db8901a50dd1133.mov"
-              autoPlay
-              muted
-              loop
-              playsInline
-              preload="metadata"
-              controls={false}
-              controlsList="nodownload nofullscreen noremoteplayback"
-              disablePictureInPicture
-              onContextMenu={(e) => e.preventDefault()}
-              className="w-full max-w-6xl h-auto select-none pointer-events-none"
-            />
-          </div>
         </div>
       </div>
     </section>
