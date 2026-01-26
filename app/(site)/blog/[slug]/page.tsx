@@ -386,7 +386,7 @@ export default async function SingleBlogPage({
         {/* ===== RELATED POSTS ===== */}
         {relatedPosts.length > 0 && (
           <div className="mt-40">
-            <h2 className="text-[34px] font-semibold text-gray-900 mb-12">
+            <h2 className="text-[27px] font-semibold text-gray-900 mb-12">
               Related Articles
             </h2>
 

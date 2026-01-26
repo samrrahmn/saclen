@@ -2,7 +2,7 @@ import Container from "../../ui/Container";
 
 const services = [
   {
-    title: "Website & Web App Development",
+    title: "Website Development",
     desc: "High-performance websites and web applications built for speed, conversion, and long-term scalability using modern technologies.",
     icon: <i className="fa-solid fa-code text-blue-600 text-[22px]"></i>,
   },
@@ -28,14 +28,13 @@ export default function ServicesSection() {
     <section id="services" className="py-28 bg-white scroll-mt-24">
       <Container>
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-20">
+        <div className="text-center max-w-2xl mx-auto mb-20">
           <h2 className="text-[28px] sm:text-[36px] md:text-[44px] font-semibold leading-[1.1] text-gray-900">
-            Everything you need to build and automate your business
+            Digital systems that streamline your business
           </h2>
           <p className="mt-4 text-[16px] sm:text-[18px] text-gray-600 leading-[1.7]">
-            We design and build complete business systems combining modern web
-            development and AI automation so you can run and scale your company
-            from one platform.
+            We design and build modern websites and automation systems to
+            improve efficiency and help your business run smoothly.
           </p>
         </div>
 
