@@ -49,7 +49,7 @@ export default function ContactPage() {
   }
 
   return (
-    <main className="py-32 bg-gradient-to-b from-slate-50 via-blue-50/40 to-transparent">
+    <main className="py-28 bg-gradient-to-b from-slate-50 via-blue-50/40 to-transparent">
       <Container>
         {/* Heading */}
         <div className="max-w-xl mx-auto text-center mb-12">
