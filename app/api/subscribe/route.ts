@@ -16,7 +16,7 @@ export async function POST(req: Request) {
       },
       body: JSON.stringify({
         email,
-        listIds: [3],
+        listIds: [9],
         updateEnabled: true,
       }),
     });
