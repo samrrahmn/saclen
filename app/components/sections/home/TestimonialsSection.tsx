@@ -128,7 +128,7 @@ export default function TestimonialsSection() {
 
           <div className="mt-6 flex items-center justify-center gap-3 text-sm">
             <Image
-              src="/logos/upwork.png"
+              src="/logos/fiverr.png"
               alt="Upwork"
               width={70}
               height={24}
@@ -136,10 +136,11 @@ export default function TestimonialsSection() {
             />
 
             <Link
-              href="#"
+              href="https://go.saclen.com/saclen-atlas-fiverr-profile"
+              target="_blank"
               className="text-black font-medium text-base underline underline-offset-4 decoration-green-500"
             >
-              View all reviews on Upwork
+              View all reviews on Fiverr
             </Link>
           </div>
         </div>
