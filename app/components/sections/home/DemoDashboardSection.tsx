@@ -3,7 +3,7 @@ import DemoDashboard from "./DemoDashboard";
 
 export default function DemoDashboardSection() {
   return (
-    <section className="py-24">
+    <section className="py-20 md:py-25">
       <Container>
         <div>
           {/* Heading */}

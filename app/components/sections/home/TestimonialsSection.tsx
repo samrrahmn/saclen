@@ -115,7 +115,7 @@ function Column({ speed }: { speed: number }) {
 
 export default function TestimonialsSection() {
   return (
-    <section className="py-24 overflow-hidden">
+    <section className="py-20 md:py-25 overflow-hidden">
       <div className="max-w-5xl mx-auto px-6">
         {/* Header */}
         <div className="text-center mb-16">

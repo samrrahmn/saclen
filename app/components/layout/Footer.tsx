@@ -145,8 +145,14 @@ export default function Footer() {
               © 2026, Saclen Atlas, All Rights Reserved.
             </p>
 
-            {/* Social Icons */}
+            {/* Icons */}
             <div className="flex gap-6 text-black text-[22px]">
+              <a
+                href="mailto:atlas@saclen.com"
+                className="hover:opacity-70 transition"
+              >
+                <i className="fa-solid fa-envelope"></i>
+              </a>
               <a
                 target="_blank"
                 href="https://x.com/saclenatlas"
@@ -160,13 +166,6 @@ export default function Footer() {
                 className="hover:opacity-70 transition"
               >
                 <i className="fa-brands fa-linkedin"></i>
-              </a>
-              <a
-                target="_blank"
-                href="https://www.instagram.com/saclenatlas"
-                className="hover:opacity-70 transition"
-              >
-                <i className="fa-brands fa-instagram"></i>
               </a>
             </div>
           </div>

@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function CTASection() {
   return (
-    <section className="py-32">
+    <section className="py-20 md:py-25">
       <Container>
         <div className="rounded-xl border bg-primary px-6 py-20 md:px-12 text-center">
           {/* Title */}
