@@ -24,37 +24,6 @@ const data = [
   { name: "Oct", revenue: 5800 },
 ];
 
-const orders = [
-  {
-    id: "#3210",
-    customer: "Sarah Johnson",
-    amount: "$2,400",
-    status: "Completed",
-    date: "Jan 20",
-  },
-  {
-    id: "#3209",
-    customer: "Michael Chen",
-    amount: "$1,800",
-    status: "Completed",
-    date: "Jan 19",
-  },
-  {
-    id: "#3208",
-    customer: "Emma Wilson",
-    amount: "$3,200",
-    status: "Processing",
-    date: "Jan 18",
-  },
-  {
-    id: "#3207",
-    customer: "James Brown",
-    amount: "$950",
-    status: "Completed",
-    date: "Jan 17",
-  },
-];
-
 function StatCard({
   title,
   value,
@@ -87,7 +56,7 @@ function StatCard({
 function CustomTooltip({ active, payload, label }: any) {
   if (active && payload && payload.length) {
     return (
-      <div className="rounded-xl border border-gray-200 bg-white px-4 py-2 shadow-lg">
+      <div className="rounded-lg border border-gray-200 bg-white px-4 py-2 shadow-lg">
         <p className="text-sm text-gray-500">{label}</p>
         <p className="text-base font-semibold text-gray-900">
           ${payload[0].value.toLocaleString()}
@@ -95,12 +64,13 @@ function CustomTooltip({ active, payload, label }: any) {
       </div>
     );
   }
+
   return null;
 }
 
 export default function DemoDashboard() {
   return (
-    <div className="rounded-xl border border-gray-200 bg-gray-50 p-6 h-[720px] overflow-y-auto">
+    <div className="rounded-xl border border-gray-200 bg-gray-50 p-6">
       {/* Header */}
       <div className="mb-6 flex items-center justify-between">
         <div>
@@ -109,7 +79,7 @@ export default function DemoDashboard() {
             Welcome back! Here's your overview
           </p>
         </div>
-        <div className="rounded-md border border-gray-200 px-3 py-1.5 text-sm text-gray-600 bg-white">
+        <div className="rounded-md border border-gray-200 px-3 py-1.5 text-sm text-gray-600">
           Last 30 days
         </div>
       </div>
@@ -141,24 +111,28 @@ export default function DemoDashboard() {
 
       {/* Chart Card */}
       <div className="mt-6 rounded-xl border border-gray-200 bg-white p-5">
-        <h4 className="font-semibold text-gray-900 text-lg">
-          Revenue Overview
-        </h4>
-        <p className="text-sm text-gray-500 mb-4 pt-1">
+        <h4 className="font-semibold text-gray-900">Revenue Overview</h4>
+        <p className="text-sm text-gray-500 mb-4">
           Monthly performance tracking
         </p>
 
         <div className="h-[300px] w-full">
           <ResponsiveContainer width="100%" height="100%">
             <LineChart data={data}>
+              {/* Grid background */}
               <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
+
               <XAxis dataKey="name" tickLine={false} axisLine={false} />
+
+              {/* Auto scale without 0 */}
               <YAxis
                 tickLine={false}
                 axisLine={false}
                 domain={["dataMin - 500", "dataMax + 500"]}
               />
+
               <Tooltip content={<CustomTooltip />} />
+
               <Line
                 type="monotone"
                 dataKey="revenue"
@@ -169,58 +143,6 @@ export default function DemoDashboard() {
               />
             </LineChart>
           </ResponsiveContainer>
-        </div>
-      </div>
-
-      {/* Recent Orders */}
-      <div className="mt-6 rounded-xl border border-gray-200 bg-white overflow-hidden">
-        <div className="p-5 border-b border-gray-200">
-          <h4 className="font-semibold text-gray-900 text-lg">Recent Orders</h4>
-          <p className="text-sm text-gray-500 pt-1">
-            Latest transactions from your customers
-          </p>
-        </div>
-
-        <div className="overflow-x-auto">
-          <table className="w-full text-sm">
-            <thead className="text-gray-500">
-              <tr className="border-b border-gray-200">
-                <th className="px-5 py-3 text-left font-medium">ORDER ID</th>
-                <th className="px-5 py-3 text-left font-medium">CUSTOMER</th>
-                <th className="px-5 py-3 text-left font-medium">AMOUNT</th>
-                <th className="px-5 py-3 text-left font-medium">STATUS</th>
-                <th className="px-5 py-3 text-left font-medium">DATE</th>
-              </tr>
-            </thead>
-            <tbody>
-              {orders.map((order) => (
-                <tr
-                  key={order.id}
-                  className="border-b border-gray-100 last:border-0"
-                >
-                  <td className="px-5 py-4 font-medium text-gray-900">
-                    {order.id}
-                  </td>
-                  <td className="px-5 py-4 text-gray-700">{order.customer}</td>
-                  <td className="px-5 py-4 font-semibold text-gray-900">
-                    {order.amount}
-                  </td>
-                  <td className="px-5 py-4">
-                    <span
-                      className={`rounded-full px-3 py-1 text-xs font-medium ${
-                        order.status === "Completed"
-                          ? "bg-green-100 text-green-700"
-                          : "bg-yellow-100 text-yellow-700"
-                      }`}
-                    >
-                      {order.status}
-                    </span>
-                  </td>
-                  <td className="px-5 py-4 text-gray-600">{order.date}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
         </div>
       </div>
     </div>
