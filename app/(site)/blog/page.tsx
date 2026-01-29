@@ -4,6 +4,10 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { client } from "@/lib/sanityClient";
+import FAQSection from "@/app/components/sections/shared/FAQSection";
+import Container from "@/app/components/ui/Container";
+
+import CTASection from "@/app/components/sections/shared/CTASection";
 
 export const metadata: Metadata = {
   title: "Blog",
@@ -58,49 +62,65 @@ export default async function BlogPage() {
 
   return (
     <main className="py-28 bg-white">
-      <div className="max-w-7xl mx-auto px-6">
-        {/* ===== POSTS GRID ===== */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-[60px] gap-y-16">
-          {posts.map((post) => (
-            <Link
-              key={post._id}
-              href={`/blog/${post.slug.current}`}
-              className="group block"
-            >
-              {/* Image */}
-              {post.mainImage?.asset?.url && (
-                <div className="relative w-full aspect-video overflow-hidden rounded-lg mb-4">
-                  <Image
-                    src={post.mainImage.asset.url}
-                    alt={post.mainImage.alt || post.title}
-                    fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-[1.04]"
-                  />
+      <Container>
+        <div>
+          {/* Header */}
+          <div className="text-center max-w-2xl mx-auto mb-20">
+            <h2 className="text-[28px] sm:text-[36px] md:text-[44px] font-semibold leading-[1.1] text-gray-900">
+              Insights for building modern digital businesses.
+            </h2>
+            <p className="mt-4 text-[16px] sm:text-[18px] text-gray-600 leading-[1.7]">
+              Read our latest articles on web development, AI automation, and
+              building scalable digital systems for modern businesses.
+            </p>
+          </div>
+
+          {/* ===== POSTS GRID ===== */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-[60px] gap-y-16 pb-20">
+            {posts.map((post) => (
+              <Link
+                key={post._id}
+                href={`/blog/${post.slug.current}`}
+                className="group block"
+              >
+                {/* Image */}
+                {post.mainImage?.asset?.url && (
+                  <div className="relative w-full aspect-video overflow-hidden rounded-lg mb-4">
+                    <Image
+                      src={post.mainImage.asset.url}
+                      alt={post.mainImage.alt || post.title}
+                      fill
+                      className="object-cover transition-transform duration-500 group-hover:scale-[1.04]"
+                    />
+                  </div>
+                )}
+
+                {/* Date */}
+                <div className="text-sm text-gray-500 mb-2">
+                  {new Date(post.publishedAt).toLocaleDateString("en-US", {
+                    year: "numeric",
+                    month: "short",
+                    day: "numeric",
+                  })}
                 </div>
-              )}
 
-              {/* Date */}
-              <div className="text-sm text-gray-500 mb-2">
-                {new Date(post.publishedAt).toLocaleDateString("en-US", {
-                  year: "numeric",
-                  month: "short",
-                  day: "numeric",
-                })}
-              </div>
+                {/* Title */}
+                <h2 className="text-[20px] leading-snug font-semibold text-gray-900 mb-2 transition-colors group-hover:underline">
+                  {post.title}
+                </h2>
 
-              {/* Title */}
-              <h2 className="text-[20px] leading-snug font-semibold text-gray-900 mb-2 transition-colors group-hover:underline">
-                {post.title}
-              </h2>
+                {/* Excerpt */}
+                <p className="text-[15px] leading-relaxed text-gray-600 line-clamp-2">
+                  {getExcerpt(post.body || [], 140)}
+                </p>
+              </Link>
+            ))}
+          </div>
 
-              {/* Excerpt */}
-              <p className="text-[15px] leading-relaxed text-gray-600 line-clamp-2">
-                {getExcerpt(post.body || [], 140)}
-              </p>
-            </Link>
-          ))}
+          <FAQSection />
+          <CTASection />
         </div>
-      </div>
+      </Container>
     </main>
   );
 }
