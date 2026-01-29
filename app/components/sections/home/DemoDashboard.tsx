@@ -72,14 +72,17 @@ export default function DemoDashboard() {
   return (
     <div className="rounded-xl border border-gray-200 bg-gray-50 p-6">
       {/* Header */}
-      <div className="mb-6 flex items-center justify-between">
+      <div className="mb-6 flex items-start sm:items-center justify-between gap-3">
         <div>
-          <h3 className="text-2xl font-semibold text-gray-900">Dashboard</h3>
+          <h3 className="text-xl sm:text-2xl font-semibold text-gray-900">
+            Dashboard
+          </h3>
           <p className="text-sm text-gray-500">
             Welcome back! Here's your overview
           </p>
         </div>
-        <div className="rounded-md border border-gray-200 px-3 py-1.5 text-sm text-gray-600">
+
+        <div className="shrink-0 rounded-md border border-gray-200 px-2 py-1 sm:px-3 sm:py-1.5 text-xs sm:text-sm text-gray-600 bg-white">
           Last 30 days
         </div>
       </div>
@@ -116,33 +119,31 @@ export default function DemoDashboard() {
           Monthly performance tracking
         </p>
 
-        <div className="h-[300px] w-full">
-          <ResponsiveContainer width="100%" height="100%">
-            <LineChart data={data}>
-              {/* Grid background */}
-              <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
-
-              <XAxis dataKey="name" tickLine={false} axisLine={false} />
-
-              {/* Auto scale without 0 */}
-              <YAxis
-                tickLine={false}
-                axisLine={false}
-                domain={["dataMin - 500", "dataMax + 500"]}
-              />
-
-              <Tooltip content={<CustomTooltip />} />
-
-              <Line
-                type="monotone"
-                dataKey="revenue"
-                stroke="#84cc16"
-                strokeWidth={3}
-                dot={{ r: 5, strokeWidth: 2, fill: "#84cc16" }}
-                activeDot={{ r: 7 }}
-              />
-            </LineChart>
-          </ResponsiveContainer>
+        {/* 👇 Horizontal scroll wrapper */}
+        <div className="h-[300px] w-full overflow-x-auto">
+          {/* 👇 Fixed min width so chart never shrinks */}
+          <div className="min-w-[700px] h-full">
+            <ResponsiveContainer width="100%" height="100%">
+              <LineChart data={data}>
+                <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
+                <XAxis dataKey="name" tickLine={false} axisLine={false} />
+                <YAxis
+                  tickLine={false}
+                  axisLine={false}
+                  domain={["dataMin - 500", "dataMax + 500"]}
+                />
+                <Tooltip content={<CustomTooltip />} />
+                <Line
+                  type="monotone"
+                  dataKey="revenue"
+                  stroke="#84cc16"
+                  strokeWidth={3}
+                  dot={{ r: 5, strokeWidth: 2, fill: "#84cc16" }}
+                  activeDot={{ r: 7 }}
+                />
+              </LineChart>
+            </ResponsiveContainer>
+          </div>
         </div>
       </div>
     </div>
