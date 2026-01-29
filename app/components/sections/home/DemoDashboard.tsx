@@ -119,9 +119,7 @@ export default function DemoDashboard() {
           Monthly performance tracking
         </p>
 
-        {/* 👇 Horizontal scroll wrapper */}
         <div className="h-[300px] w-full overflow-x-auto">
-          {/* 👇 Fixed min width so chart never shrinks */}
           <div className="min-w-[700px] h-full">
             <ResponsiveContainer width="100%" height="100%">
               <LineChart data={data}>
