@@ -1,8 +1,7 @@
-import Image from "next/image";
 import Container from "../../ui/Container";
 import DemoDashboard from "./DemoDashboard";
 
-export default function DemoOverlaySection() {
+export default function DemoDashboardSection() {
   return (
     <section className="py-24">
       <Container>
