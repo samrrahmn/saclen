@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Container from "../../ui/Container";
 
 const faqs = [
   {
@@ -33,49 +34,50 @@ export default function FAQSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <section id="faqs" className="container py-24">
-      {/* Heading */}
-      <div className="text-center max-w-2xl mx-auto mb-12">
-        <h2 className="text-[28px] sm:text-[36px] md:text-[44px] font-semibold leading-[1.1] text-gray-900">
-          Frequently asked questions
-        </h2>
-        <p className="mt-4 text-[16px] sm:text-[18px] text-gray-600 leading-[1.7]">
-          Everything you need to know about our web development and AI
-          automation services before getting started.
-        </p>
-      </div>
+    <section id="faqs" className="py-24">
+      <Container>
+        {/* Heading */}
+        <div className="text-center max-w-2xl mx-auto mb-12">
+          <h2 className="text-[28px] sm:text-[36px] md:text-[44px] font-semibold leading-[1.1] text-gray-900">
+            Frequently asked questions
+          </h2>
+          <p className="mt-4 text-[16px] sm:text-[18px] text-gray-600 leading-[1.7]">
+            Everything you need to know about our web development and AI
+            automation services before getting started.
+          </p>
+        </div>
+        {/* FAQ Grid */}
+        <div className="mt-6 columns-1 lg:columns-2 gap-6">
+          {faqs.map((faq, i) => {
+            const open = openIndex === i;
 
-      {/* FAQ Grid */}
-      <div className="mt-6 columns-1 lg:columns-2 gap-6">
-        {faqs.map((faq, i) => {
-          const open = openIndex === i;
-
-          return (
-            <div
-              key={i}
-              className="rounded-xl border border-gray-200 bg-gray-50 p-5 break-inside-avoid mb-6"
-            >
-              <button
-                onClick={() => setOpenIndex(open ? null : i)}
-                className="w-full flex justify-between items-center text-left"
+            return (
+              <div
+                key={i}
+                className="rounded-xl border border-gray-200 bg-gray-50 p-5 break-inside-avoid mb-6"
               >
-                <p className="font-semibold text-lg text-gray-900">{faq.q}</p>
-                <i
-                  className={`fa-solid fa-chevron-up transition-transform ${
-                    open ? "" : "-rotate-180"
-                  }`}
-                />
-              </button>
+                <button
+                  onClick={() => setOpenIndex(open ? null : i)}
+                  className="w-full flex justify-between items-center text-left"
+                >
+                  <p className="font-semibold text-lg text-gray-900">{faq.q}</p>
+                  <i
+                    className={`fa-solid fa-chevron-up transition-transform ${
+                      open ? "" : "-rotate-180"
+                    }`}
+                  />
+                </button>
 
-              {open && (
-                <div className="text-md font-normal mt-6 text-gray-700 leading-[1.7]">
-                  {faq.a}
-                </div>
-              )}
-            </div>
-          );
-        })}
-      </div>
+                {open && (
+                  <div className="text-md font-normal mt-6 text-gray-700 leading-[1.7]">
+                    {faq.a}
+                  </div>
+                )}
+              </div>
+            );
+          })}
+        </div>
+      </Container>
     </section>
   );
 }

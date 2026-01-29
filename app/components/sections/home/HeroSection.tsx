@@ -25,7 +25,7 @@ export default function HeroSection() {
         </div>
 
         {/* Heading */}
-        <h1 className="text-4xl font-semibold leading-snug mt-4 sm:text-6xl">
+        <h1 className="text-4xl font-semibold font-inter leading-snug mt-4 sm:text-6xl">
           Building intelligent systems for businesses
         </h1>
 

@@ -30,7 +30,7 @@ export default function ServicesSection() {
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto mb-20">
           <h2 className="text-[28px] sm:text-[36px] md:text-[44px] font-semibold leading-[1.1] text-gray-900">
-            Digital systems that streamline your business
+            Build smarter digital systems for your business
           </h2>
           <p className="mt-4 text-[16px] sm:text-[18px] text-gray-600 leading-[1.7]">
             We design and build modern websites and automation systems to
