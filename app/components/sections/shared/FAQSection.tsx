@@ -5,28 +5,28 @@ import Container from "../../ui/Container";
 
 const faqs = [
   {
+    q: "What tools and technologies do you use?",
+    a: "We primarily use WordPress, WooCommerce, and Elementor for website and eCommerce development. For AI and business automation, we use n8n to connect different tools, automate workflows, and integrate AI features such as lead handling, email automation, and data synchronization.",
+  },
+  {
     q: "How much does a project usually cost?",
-    a: "Project cost depends on scope, features, and complexity. Most custom projects start from a few thousand dollars and increase based on design, integrations, and automation requirements. After reviewing your needs, we provide a clear fixed or milestone-based quote.",
+    a: "Project cost depends on the scope, features, and level of automation required. Simple websites cost less, while WooCommerce stores and automation-heavy projects cost more. After understanding your requirements, we provide a clear fixed or milestone-based quote.",
   },
   {
     q: "How long does a project take?",
-    a: "Timelines depend on scope, but most projects take between 2 to 8 weeks. Larger SaaS platforms or automation-heavy systems may take longer depending on complexity and feedback cycles.",
+    a: "Timelines depend on the project size and complexity. Most WordPress websites take 1–3 weeks, while WooCommerce and AI automation projects usually take 3–6 weeks, depending on integrations and feedback.",
   },
   {
-    q: "What tech stack do you use?",
-    a: "We use modern stacks like Next.js, React, Node.js, Tailwind, and cloud platforms. For no-code projects, we use tools like Webflow, Framer, Airtable, and automation platforms depending on what fits your use case best.",
+    q: "Is no-code automation secure and scalable?",
+    a: "Yes. When built properly, no-code automation using tools like n8n is secure, reliable, and scalable. We follow best practices to ensure long-term stability and performance.",
   },
   {
-    q: "Should we use no-code or custom development?",
-    a: "It depends on your goals, budget, and scale. We often start with no-code for speed and cost efficiency, and use custom development when you need more control, performance, or long-term scalability.",
-  },
-  {
-    q: "Do you provide support after launch?",
-    a: "Yes. We provide ongoing support, maintenance, and improvements after launch to ensure your system stays stable, secure, and up to date.",
+    q: "Do you provide support after the project is completed?",
+    a: "Yes. We offer ongoing support, maintenance, and improvements to keep your website and automation systems running smoothly after launch.",
   },
   {
     q: "How do we get started?",
-    a: "Simply book a call or send us a message with your idea or problem. We’ll review it, ask a few questions, and suggest the best next steps.",
+    a: "Simply contact us with your idea or requirements. We’ll review your needs, ask a few questions, and suggest the best solution and next steps.",
   },
 ];
 
