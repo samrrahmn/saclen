@@ -76,12 +76,6 @@ export default function RootLayout({
           gtag('config', 'G-9C86PZ711F');
         `}
         </Script>
-
-        {/* Tidio Live Chat */}
-        <Script
-          src="https://code.tidio.co/9iql3s7f85ha3tyt7dxoj3dws9fv2skn.js"
-          strategy="afterInteractive"
-        />
       </head>
 
       <body>{children}</body>
