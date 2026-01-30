@@ -107,7 +107,7 @@ export default function ServicesSection() {
                 href={service.buttonLink}
                 className={`mt-auto rounded-lg py-3 font-semibold transition text-center ${
                   i === 1
-                    ? "bg-primary text-white hover:bg-primary/90"
+                    ? "bg-black text-white hover:bg-black"
                     : "border border-gray-400 text-black bg-white hover:bg-gray-50"
                 }`}
               >

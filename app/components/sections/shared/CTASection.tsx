@@ -20,13 +20,13 @@ export default function CTASection() {
           {/* Buttons */}
           <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 w-full">
             <Link href="/contact" className="w-full sm:w-auto">
-              <button className="h-[52px] w-full sm:w-auto px-8 rounded-lg bg-white text-primary text-[16px] font-medium hover:opacity-90 transition">
+              <button className="h-[52px] w-full sm:w-auto px-8 rounded-lg bg-white text-black text-[16px] font-medium">
                 Start Your Project
               </button>
             </Link>
 
             <Link href="/book-a-call" className="w-full sm:w-auto">
-              <button className="h-[52px] w-full sm:w-auto px-8 rounded-lg text-white border text-[16px] font-medium hover:opacity-90 transition">
+              <button className="h-[52px] w-full sm:w-auto px-8 text-[16px] font-medium bg-black text-white rounded-lg">
                 Book a Call
               </button>
             </Link>

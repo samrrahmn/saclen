@@ -37,7 +37,7 @@ export default function HeroSection() {
         {/* Buttons */}
         <div className="mt-12 flex gap-4 flex-col sm:flex-row sm:justify-center w-full">
           <Link href="/book-a-call" className="w-full sm:w-auto">
-            <span className="block text-center px-8 py-3 font-semibold rounded-lg text-white bg-primary shadow-sm hover:bg-opacity-90">
+            <span className="block text-center px-8 py-3 font-semibold rounded-lg text-white bg-primary">
               Book a call
             </span>
           </Link>

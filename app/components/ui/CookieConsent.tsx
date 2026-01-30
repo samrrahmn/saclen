@@ -48,14 +48,14 @@ export default function CookieConsent() {
         <div className="flex gap-3 justify-end">
           <button
             onClick={cancelCookies}
-            className="h-10 px-4 rounded-md border border-gray-300 text-gray-800 text-sm hover:bg-gray-50 transition"
+            className="h-10 px-4 rounded-md border border-gray-400 text-gray-800 text-sm hover:bg-gray-50 transition"
           >
             Cancel
           </button>
 
           <button
             onClick={acceptCookies}
-            className="h-10 px-5 rounded-md bg-primary text-white text-sm font-medium hover:opacity-90 transition"
+            className="h-10 px-5 rounded-md bg-black text-white text-sm font-medium"
           >
             Accept
           </button>

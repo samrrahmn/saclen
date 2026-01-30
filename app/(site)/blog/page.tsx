@@ -4,10 +4,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { client } from "@/lib/sanityClient";
-import FAQSection from "@/app/components/sections/shared/FAQSection";
 import Container from "@/app/components/ui/Container";
-
-import CTASection from "@/app/components/sections/shared/CTASection";
 
 export const metadata: Metadata = {
   title: "Blog",
@@ -64,19 +61,8 @@ export default async function BlogPage() {
     <main className="py-28 bg-white">
       <Container>
         <div>
-          {/* Header */}
-          <div className="text-center max-w-2xl mx-auto mb-20">
-            <h2 className="text-[28px] sm:text-[36px] md:text-[44px] font-semibold leading-[1.1] text-gray-900">
-              Insights for building modern digital businesses.
-            </h2>
-            <p className="mt-4 text-[16px] sm:text-[18px] text-gray-600 leading-[1.7]">
-              Read our latest articles on web development, AI automation, and
-              building scalable digital systems for modern businesses.
-            </p>
-          </div>
-
           {/* ===== POSTS GRID ===== */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-[60px] gap-y-16 pb-20">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-[60px] gap-y-16">
             {posts.map((post) => (
               <Link
                 key={post._id}
@@ -116,9 +102,6 @@ export default async function BlogPage() {
               </Link>
             ))}
           </div>
-
-          <FAQSection />
-          <CTASection />
         </div>
       </Container>
     </main>
