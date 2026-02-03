@@ -10,6 +10,7 @@ import {
   CartesianGrid,
 } from "recharts";
 import { DollarSign, ShoppingBag, Users } from "lucide-react";
+import { useRef, useState, useLayoutEffect } from "react";
 
 const data = [
   { name: "Jan", revenue: 2400 },
@@ -69,6 +70,18 @@ function CustomTooltip({ active, payload, label }: any) {
 }
 
 export default function DemoDashboard() {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [isReady, setIsReady] = useState(false);
+
+  useLayoutEffect(() => {
+    if (containerRef.current) {
+      const { width, height } = containerRef.current.getBoundingClientRect();
+      if (width > 0 && height > 0) {
+        setIsReady(true);
+      }
+    }
+  }, []);
+
   return (
     <div className="rounded-xl border border-gray-200 bg-gray-50 p-6">
       {/* Header */}
@@ -119,29 +132,31 @@ export default function DemoDashboard() {
           Monthly performance tracking
         </p>
 
-        <div className="h-[300px] w-full overflow-x-auto">
-          <div className="min-w-[700px] h-full">
-            <ResponsiveContainer width="100%" height="100%">
-              <LineChart data={data}>
-                <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
-                <XAxis dataKey="name" tickLine={false} axisLine={false} />
-                <YAxis
-                  tickLine={false}
-                  axisLine={false}
-                  domain={["dataMin - 500", "dataMax + 500"]}
-                />
-                <Tooltip content={<CustomTooltip />} />
-                <Line
-                  type="monotone"
-                  dataKey="revenue"
-                  stroke="#84cc16"
-                  strokeWidth={3}
-                  dot={{ r: 5, strokeWidth: 2, fill: "#84cc16" }}
-                  activeDot={{ r: 7 }}
-                />
-              </LineChart>
-            </ResponsiveContainer>
-          </div>
+        <div className="h-[300px] w-full overflow-x-auto" ref={containerRef}>
+          {isReady && (
+            <div className="min-w-[700px] h-full">
+              <ResponsiveContainer width="100%" height="100%">
+                <LineChart data={data}>
+                  <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
+                  <XAxis dataKey="name" tickLine={false} axisLine={false} />
+                  <YAxis
+                    tickLine={false}
+                    axisLine={false}
+                    domain={["dataMin - 500", "dataMax + 500"]}
+                  />
+                  <Tooltip content={<CustomTooltip />} />
+                  <Line
+                    type="monotone"
+                    dataKey="revenue"
+                    stroke="#84cc16"
+                    strokeWidth={3}
+                    dot={{ r: 5, strokeWidth: 2, fill: "#84cc16" }}
+                    activeDot={{ r: 7 }}
+                  />
+                </LineChart>
+              </ResponsiveContainer>
+            </div>
+          )}
         </div>
       </div>
     </div>
