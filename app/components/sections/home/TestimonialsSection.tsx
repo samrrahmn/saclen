@@ -5,7 +5,7 @@ import Image from "next/image";
 
 const avatarColors = [
   "bg-[#5a3fd0]",
-  "bg-[#5734ac]",
+  "bg-[#03897b]",
   "bg-[#1a73e8]",
   "bg-[#d93025]",
   "bg-[#f29900]",
