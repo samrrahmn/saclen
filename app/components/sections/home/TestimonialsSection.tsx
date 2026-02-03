@@ -52,7 +52,7 @@ function TrustpilotStars() {
     <Image
       src="/logos/trustpilot-star.svg"
       alt="Trustpilot rating"
-      width={110}
+      width={80}
       height={20}
       className="object-contain"
     />
@@ -83,7 +83,7 @@ function Column({ speed }: { speed: number }) {
               </div>
 
               <div>
-                <div className="text-[15px] font-semibold text-gray-900">
+                <div className="text-[15px] font-medium text-gray-900">
                   {item.name}
                 </div>
                 <div className="text-sm text-gray-500">{item.date}</div>
