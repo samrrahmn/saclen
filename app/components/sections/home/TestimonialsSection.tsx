@@ -83,10 +83,10 @@ function Column({ speed }: { speed: number }) {
               </div>
 
               <div>
-                <div className="text-[15px] font-medium text-gray-900">
+                <div className="text-base font-medium text-gray-900">
                   {item.name}
                 </div>
-                <div className="text-sm text-gray-500">{item.date}</div>
+                <div className="text-xs text-gray-500">{item.date}</div>
               </div>
             </div>
 
