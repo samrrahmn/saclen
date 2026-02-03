@@ -5,6 +5,7 @@ import { PortableText } from "@portabletext/react";
 import { client } from "@/lib/sanityClient";
 import CTASection from "@/app/components/sections/shared/CTASection";
 import AISummarizeCard from "@/app/(site)/blog/AISummarizeCard";
+import { redirect } from "next/navigation";
 
 /* ================= Types ================= */
 
@@ -81,11 +82,7 @@ export async function generateMetadata({
   const { slug } = await params;
   const post = await getPost(slug);
 
-  if (!post) {
-    return {
-      title: "Post not found",
-    };
-  }
+  if (!post) redirect("/blog");
 
   const description =
     post.body?.[0]?.children?.[0]?.text?.slice(0, 160) ||
@@ -250,7 +247,7 @@ const portableComponents = {
           href={value?.href}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-blue-600 hover:text-blue-700 underline underline-offset-4"
+          className="text-primary underline underline-offset-4"
         >
           {children}
         </a>
@@ -260,7 +257,7 @@ const portableComponents = {
 
   block: {
     h2: ({ children }: any) => (
-      <h2 className="text-[25px] md:text-[30px] font-semibold text-gray-900 mt-20 mb-6 tracking-tight">
+      <h2 className="text-[25px] md:text-[30px] font-semibold text-gray-900 mt-[60px] mb-4 tracking-tight">
         {children}
       </h2>
     ),
@@ -272,18 +269,18 @@ const portableComponents = {
     ),
 
     normal: ({ children }: any) => (
-      <p className="text-gray-700 text-[19px] leading-[1.9] mb-8">{children}</p>
+      <p className="text-black text-[19px] leading-[1.9] mb-7">{children}</p>
     ),
   },
 
   list: {
     bullet: ({ children }: any) => (
-      <ul className="list-disc pl-6 my-10 space-y-4 text-gray-700 text-[19px] leading-[1.8]">
+      <ul className="list-disc pl-7  space-y-2 text-black text-[19px] leading-[1.8]">
         {children}
       </ul>
     ),
     number: ({ children }: any) => (
-      <ol className="list-decimal pl-6 my-10 space-y-4 text-gray-700 text-[19px] leading-[1.8]">
+      <ol className="list-decimal pl-6 space-y-2 text-black text-[19px] leading-[1.8]">
         {children}
       </ol>
     ),
