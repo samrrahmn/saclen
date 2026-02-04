@@ -172,7 +172,7 @@ export default function ContactPage() {
                     <input
                       name="Full Name"
                       required
-                      className="w-full h-[44px] px-4 rounded-md border border-gray-300 focus:ring-2 focus:ring-blue-600 focus:outline-none"
+                      className="w-full h-[44px] px-4 rounded-md border border-gray-300 focus:ring-1 focus:ring-primary focus:outline-none"
                     />
                   </div>
 
@@ -184,7 +184,7 @@ export default function ContactPage() {
                       type="email"
                       name="Email"
                       required
-                      className="w-full h-[44px] px-4 rounded-md border border-gray-300 focus:ring-2 focus:ring-blue-600 focus:outline-none"
+                      className="w-full h-[44px] px-4 rounded-md border border-gray-300 focus:ring-1 focus:ring-primary focus:outline-none"
                     />
                   </div>
 
@@ -195,7 +195,7 @@ export default function ContactPage() {
                     <select
                       name="Service"
                       required
-                      className="w-full h-[44px] px-4 rounded-md border border-gray-300 focus:ring-2 focus:ring-blue-600 focus:outline-none"
+                      className="w-full h-[44px] px-4 rounded-md border border-gray-300 focus:ring-1 focus:ring-primary focus:outline-none"
                     >
                       <option value="">Select service</option>
                       <option>Web Development</option>
@@ -210,7 +210,7 @@ export default function ContactPage() {
                     <select
                       name="Budget"
                       required
-                      className="w-full h-[44px] px-4 rounded-md border border-gray-300 focus:ring-2 focus:ring-blue-600 focus:outline-none"
+                      className="w-full h-[44px] px-4 rounded-md border border-gray-300 focus:ring-1 focus:ring-primary focus:outline-none"
                     >
                       <option value="">Select budget</option>
                       <option>$500 – $1,000</option>
@@ -228,7 +228,7 @@ export default function ContactPage() {
                       name="Project Details"
                       rows={3}
                       required
-                      className="w-full px-4 py-2 rounded-md border border-gray-300 focus:ring-2 focus:ring-blue-600 focus:outline-none"
+                      className="w-full px-4 py-2 rounded-md border border-gray-300 focus:ring-1 focus:ring-primary focus:outline-none"
                     />
                   </div>
 
