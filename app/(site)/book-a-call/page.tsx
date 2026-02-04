@@ -6,7 +6,7 @@ import Cal, { getCalApi } from "@calcom/embed-react";
 export default function BookACallPage() {
   useEffect(() => {
     (async function () {
-      const cal = await getCalApi({ namespace: "30min" });
+      const cal = await getCalApi({ namespace: "schedule" });
 
       cal("ui", {
         theme: "light",
@@ -41,8 +41,8 @@ export default function BookACallPage() {
         {/* Calendar */}
         <div className="w-full rounded-2xl overflow-hidden">
           <Cal
-            namespace="30min"
-            calLink="sameerrahman/30min"
+            namespace="schedule"
+            calLink="sameerrahman/schedule"
             style={{
               width: "100%",
               minHeight: "600px",
