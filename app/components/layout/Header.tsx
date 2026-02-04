@@ -47,10 +47,11 @@ export default function Header() {
           {/* Desktop Contact Button */}
           <div className="hidden lg:flex flex-1 justify-end">
             <Link
-              href="/book-a-call"
+              href="/contact"
               className="flex gap-2 items-center border border-gray-400 px-4 py-2 rounded-lg"
             >
-              <span className="font-display font-medium">Book a call</span>
+              <span className="font-display font-medium">Get Started</span>
+              <i className="fa-solid fa-angle-right"></i>
             </Link>
           </div>
 
