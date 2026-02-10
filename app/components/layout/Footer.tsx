@@ -141,11 +141,19 @@ export default function Footer() {
 
           {/* Bottom */}
           <div className="flex flex-wrap md:flex-row gap-8 justify-between items-center">
+            {/* Left */}
             <p className="text-[15px] text-gray-600">
               © 2026, Saclen Atlas, All Rights Reserved.
             </p>
 
-            {/* Icons */}
+            {/* Middle */}
+            <div className="flex items-center gap-2">
+              <span className="text-[15px] text-gray-600">
+                A Service by Saclen Inc
+              </span>
+            </div>
+
+            {/* Right Icons */}
             <div className="flex gap-6 text-black text-[22px]">
               <a
                 href="mailto:atlas@saclen.com"

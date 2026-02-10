@@ -5,7 +5,7 @@ import "@fortawesome/fontawesome-free/css/all.min.css";
 
 export const metadata: Metadata = {
   title: {
-    default: "Saclen Atlas — Building the systems that run your business",
+    default: "Saclen Atlas — Building intelligent systems",
     template: "%s — Saclen Atlas",
   },
   description:
