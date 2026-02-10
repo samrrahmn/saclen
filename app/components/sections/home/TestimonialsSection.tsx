@@ -110,7 +110,7 @@ export default function TestimonialsSection() {
       <div className="max-w-5xl mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-[32px] md:text-[44px] font-semibold text-gray-900">
-            What our clients say
+            What our <span className="text-primary">clients</span> say
           </h2>
           <p className="mt-4 text-[16px] md:text-[18px] text-gray-600">
             See what our customers have to say about working with us.

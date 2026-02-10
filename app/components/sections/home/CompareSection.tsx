@@ -23,7 +23,7 @@ export default function CompareSection() {
         {/* Heading */}
         <div className="text-center max-w-xl mx-auto mb-16">
           <h2 className="text-[28px] sm:text-[36px] md:text-[44px] font-semibold leading-[1.1] text-gray-900">
-            Why Saclen Atlas?
+            Why <span className="text-primary">Saclen Atlas?</span>
           </h2>
           <p className="mt-4 text-[16px] sm:text-[18px] text-gray-600 leading-[1.7]">
             See the difference between working with a typical agency and

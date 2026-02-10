@@ -10,7 +10,7 @@ export default function CTASection() {
           style={{ backgroundImage: "url('/assets/commits-blue-bg.png')" }}
         >
           {/* Gradient Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-br from-transparent via-[#0050FE]/90 to-[#0050FE]" />
+          <div className="absolute inset-0 bg-gradient-to-br from-transparent via-primary/90 to-primary" />
 
           {/* Content */}
           <div className="relative z-10">
