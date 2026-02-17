@@ -47,18 +47,6 @@ const testimonials = [
   },
 ];
 
-function TrustpilotStars() {
-  return (
-    <Image
-      src="/logos/trustpilot-star.svg"
-      alt="Trustpilot rating"
-      width={80}
-      height={20}
-      className="object-contain"
-    />
-  );
-}
-
 function Column({ speed }: { speed: number }) {
   const items = [...testimonials, ...testimonials];
 
@@ -73,7 +61,7 @@ function Column({ speed }: { speed: number }) {
         return (
           <div
             key={i}
-            className="rounded-2xl border border-gray-200 bg-white p-6 h-[310px] flex flex-col"
+            className="rounded-2xl border border-gray-200 bg-white p-6 h-[280px] flex flex-col"
           >
             <div className="flex items-center gap-3">
               <div
@@ -88,10 +76,6 @@ function Column({ speed }: { speed: number }) {
                 </div>
                 <div className="text-sm text-gray-500">{item.date}</div>
               </div>
-            </div>
-
-            <div className="mt-3">
-              <TrustpilotStars />
             </div>
 
             <p className="mt-4 text-[16px] leading-[1.65] text-gray-800 line-clamp-6">
@@ -118,19 +102,18 @@ export default function TestimonialsSection() {
 
           <div className="mt-6 flex items-center justify-center gap-3 text-sm">
             <Image
-              src="/logos/trustpilot.png"
-              alt="Trustpilot"
+              src="/logos/upwork.png"
+              alt="Upwork"
               width={100}
               height={24}
               className="object-contain"
             />
 
             <Link
-              href="https://www.trustpilot.com/review/atlas.saclen.com"
-              target="_blank"
+              href="/upwork"
               className="text-black font-medium underline underline-offset-4 decoration-green-500"
             >
-              View all reviews on Trustpilot
+              View all reviews on Upwork
             </Link>
           </div>
         </div>
