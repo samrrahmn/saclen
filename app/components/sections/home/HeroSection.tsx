@@ -43,7 +43,7 @@ export default function HeroSection() {
             </span>
           </Link>
 
-          <Link href="/support#contact" className="w-full sm:w-auto">
+          <Link href="/contact" className="w-full sm:w-auto">
             <span className="block text-center px-8 py-3 font-semibold rounded-lg bg-white border border-gray-400">
               Contact Us
             </span>
