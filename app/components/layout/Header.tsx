@@ -35,15 +35,15 @@ export default function Header() {
             <Link href="/blog" className="font-medium hover:text-primary">
               Blog
             </Link>
-            <Link href="/support" className="font-medium hover:text-primary">
-              Support
+            <Link href="/contact" className="font-medium hover:text-primary">
+              Contact
             </Link>
           </div>
 
           {/* Desktop Contact Button */}
           <div className="hidden lg:flex flex-1 justify-end">
             <Link
-              href="/contact"
+              href="/get-started"
               className="flex gap-2 items-center border border-gray-400 px-4 py-2 rounded-lg bg-white"
             >
               <span className="font-display font-medium">Get Started</span>
@@ -92,11 +92,11 @@ export default function Header() {
               Blog
             </Link>
             <Link
-              href="/support"
+              href="/contact"
               onClick={() => setOpen(false)}
               className="font-medium py-3 block hover:text-primary"
             >
-              Support
+              Contact
             </Link>
           </div>
         </div>

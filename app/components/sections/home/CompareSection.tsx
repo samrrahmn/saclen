@@ -23,11 +23,11 @@ export default function CompareSection() {
         {/* Heading */}
         <div className="text-center max-w-xl mx-auto mb-16">
           <h2 className="text-[28px] sm:text-[36px] md:text-[44px] font-semibold leading-[1.1] text-gray-900">
-            Why <span className="text-primary">Saclen Atlas?</span>
+            Why Choose <span className="text-primary">Saclen?</span>
           </h2>
           <p className="mt-4 text-[16px] sm:text-[18px] text-gray-600 leading-[1.7]">
             See the difference between working with a typical agency and
-            building your system with Saclen Atlas.
+            building your system with Saclen.
           </p>
         </div>
 
@@ -71,7 +71,7 @@ export default function CompareSection() {
           <div className="rounded-xl bg-primary p-8 text-white relative overflow-hidden">
             {/* Top brand */}
             <div className="text-[13px] font-semibold uppercase tracking-widest text-white/80">
-              Saclen Atlas
+              Saclen
             </div>
 
             <h3 className="mt-2 text-[28px] font-semibold text-white">

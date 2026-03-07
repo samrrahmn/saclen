@@ -17,7 +17,7 @@ const services = [
       "7 days delivery",
     ],
     buttonText: "Get Started",
-    buttonLink: "/book-a-call",
+    buttonLink: "/get-started",
   },
   {
     title: "Automation",
@@ -33,7 +33,7 @@ const services = [
       "Deployment + documentation",
     ],
     buttonText: "Get Started",
-    buttonLink: "/book-a-call",
+    buttonLink: "/get-started",
   },
   {
     title: "Enterprise",

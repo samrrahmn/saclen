@@ -156,6 +156,13 @@ export default function Footer() {
               </a>
               <a
                 target="_blank"
+                href="https://facebook.com/thesaclen"
+                className="hover:opacity-70 transition"
+              >
+                <i className="fa-brands fa-facebook"></i>
+              </a>
+              <a
+                target="_blank"
                 href="https://x.com/saclen_dev"
                 className="hover:opacity-70 transition"
               >
