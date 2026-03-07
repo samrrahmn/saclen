@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import Container from "@/app/components/ui/Container";
 
 export const metadata: Metadata = {
-  title: "Terms & Conditions – Saclen Atlas",
+  title: "Terms & Conditions – Saclen",
   description:
-    "Terms and Conditions of Saclen Atlas. Please read these terms carefully before using our services.",
+    "Terms and Conditions of Saclen. Please read these terms carefully before using our services.",
 };
 
 export default function TermsPage() {
@@ -26,7 +26,7 @@ export default function TermsPage() {
           <div className="space-y-10 text-gray-700 text-[17px] leading-relaxed">
             <section>
               <p>
-                These Terms & Conditions govern your use of Saclen Atlas and our
+                These Terms & Conditions govern your use of Saclen and our
                 services. By accessing our website, contacting us, or working
                 with us, you agree to be bound by these terms.
               </p>
@@ -41,10 +41,10 @@ export default function TermsPage() {
                 1. Services
               </h2>
               <p>
-                Saclen Atlas provides web development, no-code development,
-                custom software development, and AI automation services. The
-                exact scope, features, timeline, and deliverables are defined in
-                a written proposal, agreement, or contract for each project.
+                Saclen provides web development, no-code development, custom
+                software development, and AI automation services. The exact
+                scope, features, timeline, and deliverables are defined in a
+                written proposal, agreement, or contract for each project.
               </p>
             </section>
 
@@ -128,7 +128,7 @@ export default function TermsPage() {
                 8. Limitation of Liability
               </h2>
               <p>
-                Saclen Atlas shall not be liable for any indirect, incidental,
+                Saclen shall not be liable for any indirect, incidental,
                 special, or consequential damages, including loss of profits,
                 business interruption, or data loss, arising from the use of our
                 services or delivered products.

@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import Container from "@/app/components/ui/Container";
 
 export const metadata: Metadata = {
-  title: "Refund Policy – Saclen Atlas",
+  title: "Refund Policy – Saclen",
   description:
-    "Refund Policy of Saclen Atlas. Learn how refunds, cancellations, and project terminations are handled for our services.",
+    "Refund Policy of Saclen. Learn how refunds, cancellations, and project terminations are handled for our services.",
 };
 
 export default function RefundPolicyPage() {
@@ -26,7 +26,7 @@ export default function RefundPolicyPage() {
           <div className="space-y-10 text-gray-700 text-[17px] leading-relaxed">
             <section>
               <p>
-                Saclen Atlas provides custom web development, no-code solutions,
+                Saclen provides custom web development, no-code solutions,
                 custom software, and AI automation services. Because our work is
                 customized and time-based, refunds are handled carefully and
                 fairly according to the guidelines below.
@@ -42,7 +42,7 @@ export default function RefundPolicyPage() {
               </h2>
               <p>
                 All payments are made for time, expertise, planning, and
-                development work. Once work has started on a project or a
+                development work. Once work has started on a a project or a
                 milestone, that payment is generally non-refundable.
               </p>
             </section>
@@ -70,8 +70,7 @@ export default function RefundPolicyPage() {
               </p>
               <p className="mt-3">
                 Any delivered work, drafts, designs, or code up to that point
-                will remain the property of Saclen Atlas until full payment is
-                made.
+                will remain the property of Saclen until full payment is made.
               </p>
             </section>
 

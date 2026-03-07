@@ -3,9 +3,53 @@ import Image from "next/image";
 import Link from "next/link";
 import { PortableText } from "@portabletext/react";
 import { client } from "@/lib/sanityClient";
-import CTASection from "@/app/components/sections/shared/CTASection";
-import AISummarizeCard from "@/app/(site)/blog/AISummarizeCard";
-import { redirect } from "next/navigation";
+import BlogTOCWithProgress from "@/app/components/blog/BlogTOCWithProgress";
+import FAQSection from "@/app/components/sections/shared/FAQSection";
+import AISummarizeCard from "@/app/components/blog/AISummarizeCard";
+
+/* ================= Utils ================= */
+
+function extractHeadings(body: any[]) {
+  const headings: { id: string; text: string; level: "h2" | "h3" }[] = [];
+
+  body?.forEach((block: any) => {
+    if (
+      block._type === "block" &&
+      (block.style === "h2" || block.style === "h3")
+    ) {
+      const text =
+        block.children
+          ?.map((c: any) => c.text || "")
+          .join("")
+          .trim() || "";
+
+      const id = slugifyHeading(text);
+      headings.push({ id, text, level: block.style });
+    }
+  });
+
+  return headings;
+}
+
+function extractPlainText(node: any): string {
+  if (!node) return "";
+  if (typeof node === "string") return node;
+  if (Array.isArray(node)) return node.map(extractPlainText).join("");
+  if (typeof node === "object") {
+    if (node.props?.children) return extractPlainText(node.props.children);
+    if (node.children) return extractPlainText(node.children);
+  }
+  return "";
+}
+
+function slugifyHeading(text: string) {
+  return text
+    .toLowerCase()
+    .trim()
+    .replace(/[^a-z0-9\s-]/g, "")
+    .replace(/\s+/g, "-")
+    .replace(/-+/g, "-");
+}
 
 /* ================= Types ================= */
 
@@ -82,11 +126,15 @@ export async function generateMetadata({
   const { slug } = await params;
   const post = await getPost(slug);
 
-  if (!post) redirect("/blog");
+  if (!post) {
+    return {
+      title: "Post not found",
+    };
+  }
 
   const description =
     post.body?.[0]?.children?.[0]?.text?.slice(0, 160) ||
-    "Read this article on Saclen Atlas.";
+    "Read this article on Saclen.";
 
   return {
     title: post.title,
@@ -95,8 +143,8 @@ export async function generateMetadata({
     openGraph: {
       title: post.title,
       description,
-      url: `https://atlas.saclen.com/blog/${slug}`,
-      siteName: "Saclen Atlas",
+      url: `https://saclen.com/blog/${slug}`,
+      siteName: "Saclen",
       images: post.mainImage?.asset?.url
         ? [
             {
@@ -126,7 +174,7 @@ const portableComponents = {
     image: ({ value }: any) => {
       if (!value?.asset?.url) return null;
       return (
-        <div className="my-16">
+        <div className="my-14">
           <div className="relative w-full aspect-[16/9] rounded-xl overflow-hidden border border-gray-200">
             <Image src={value.asset.url} alt="" fill className="object-cover" />
           </div>
@@ -138,7 +186,7 @@ const portableComponents = {
       if (!value?.asset?.url) return null;
 
       return (
-        <div className="my-16">
+        <div className="my-14">
           <video
             src={value.asset.url}
             controls
@@ -156,7 +204,7 @@ const portableComponents = {
         .replace("youtu.be/", "www.youtube.com/embed/");
 
       return (
-        <div className="my-16">
+        <div className="my-14">
           <div className="relative w-full aspect-video rounded-xl overflow-hidden border border-gray-200">
             <iframe
               src={embedUrl}
@@ -173,14 +221,15 @@ const portableComponents = {
       if (!value?.rows?.length) return null;
 
       return (
-        <div className="my-16">
+        <div className="my-14">
           <div className="border border-gray-200 rounded-xl bg-white shadow-sm overflow-hidden">
             {value.caption && (
-              <div className="px-6 py-4 text-[15px] font-semibold text-gray-700 bg-gray-50 border-b border-gray-200">
+              <div className="px-6 py-4 text-sm font-medium text-gray-700 bg-gray-50 border-b border-gray-200">
                 {value.caption}
               </div>
             )}
 
+            {/* SCROLL CONTAINER */}
             <div className="overflow-x-auto">
               <table className="min-w-[800px] w-full border-collapse text-left">
                 <tbody>
@@ -199,25 +248,25 @@ const portableComponents = {
                             <Tag
                               key={cellIndex}
                               className={`
-                                border-b border-r last:border-r-0 border-gray-200
-                                px-6 py-4 align-top
-                                ${
-                                  isHeader
-                                    ? "text-[16px] font-semibold text-gray-900"
-                                    : "text-[16px] text-gray-700"
-                                }
-                              `}
+                            border-b border-r last:border-r-0 border-gray-200
+                            px-6 py-4 align-top
+                            ${
+                              isHeader
+                                ? "text-[15px] font-semibold text-gray-900"
+                                : "text-[15px] text-gray-700"
+                            }
+                          `}
                             >
                               <div
                                 className="
-                                  max-w-none
-                                  text-[16px] leading-relaxed
-                                  [&_a]:text-blue-600
-                                  [&_a]:underline
-                                  [&_a:hover]:text-blue-700
-                                  [&_code]:text-black
-                                  [&_strong]:font-semibold
-                                "
+                              max-w-none
+                              text-[15px] leading-relaxed
+                              [&_a]:text-blue-600
+                              [&_a]:underline
+                              [&_a:hover]:text-blue-700
+                              [&_code]:text-black
+                              [&_strong]:font-semibold
+                            "
                               >
                                 <PortableText
                                   value={
@@ -247,7 +296,7 @@ const portableComponents = {
           href={value?.href}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-primary underline underline-offset-4"
+          className="text-blue-600 hover:text-blue-700 underline underline-offset-4"
         >
           {children}
         </a>
@@ -256,31 +305,43 @@ const portableComponents = {
   },
 
   block: {
-    h2: ({ children }: any) => (
-      <h2 className="text-[25px] md:text-[30px] font-semibold text-gray-900 mt-[60px] mb-4 tracking-tight">
-        {children}
-      </h2>
-    ),
+    h2: ({ children }: any) => {
+      const id = slugifyHeading(extractPlainText(children));
+      return (
+        <h2
+          id={id}
+          className="text-[28px] md:text-[30px] font-medium text-gray-900 mt-16 mb-4 scroll-mt-32 tracking-tight"
+        >
+          {children}
+        </h2>
+      );
+    },
 
-    h3: ({ children }: any) => (
-      <h3 className="text-[20px] md:text-[25px] font-semibold text-gray-900 mt-12 mb-4">
-        {children}
-      </h3>
-    ),
+    h3: ({ children }: any) => {
+      const id = slugifyHeading(extractPlainText(children));
+      return (
+        <h3
+          id={id}
+          className="text-[21px] font-medium text-gray-900 mt-10 mb-3 scroll-mt-32"
+        >
+          {children}
+        </h3>
+      );
+    },
 
     normal: ({ children }: any) => (
-      <p className="text-black text-[19px] leading-[1.9] mb-7">{children}</p>
+      <p className="text-gray-700 text-[18px] leading-[1.9] mb-7">{children}</p>
     ),
   },
 
   list: {
     bullet: ({ children }: any) => (
-      <ul className="list-disc pl-7  space-y-2 text-black text-[19px] leading-[1.8]">
+      <ul className="list-disc pl-6 my-8 space-y-3 text-gray-700 text-[18px] leading-[1.8]">
         {children}
       </ul>
     ),
     number: ({ children }: any) => (
-      <ol className="list-decimal pl-6 space-y-2 text-black text-[19px] leading-[1.8]">
+      <ol className="list-decimal pl-6 my-8 space-y-3 text-gray-700 text-[18px] leading-[1.8]">
         {children}
       </ol>
     ),
@@ -298,67 +359,74 @@ export default async function SingleBlogPage({
   const post = await getPost(slug);
   if (!post) return <div className="pt-40 text-center">Post not found</div>;
 
+  const headings = extractHeadings(post.body || []);
+
   const relatedPosts = await getRelatedPosts(slug, post.categories?.[0]?.title);
 
   return (
     <main className="pt-28 bg-white">
       <div className="max-w-7xl mx-auto px-6">
         {/* ===== TOP HEADER ===== */}
-        <div className="max-w-3xl mx-auto mb-20">
-          {/* Breadcrumb */}
-          <div className="text-[14px] text-gray-500 mb-8 flex flex-wrap items-center gap-2">
-            <Link href="/" className="hover:text-gray-900">
-              Home
-            </Link>
-            <span className="text-gray-400">›</span>
-            <Link href="/blog" className="hover:text-gray-900">
-              Blog
-            </Link>
+        <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-16 items-center mb-28">
+          {/* LEFT */}
+          <div>
+            {/* Breadcrumb */}
+            <div className="text-sm text-gray-500 mb-5 flex flex-wrap items-center gap-2">
+              <Link href="/" className="hover:text-gray-900">
+                Home
+              </Link>
 
-            {post.categories?.[0]?.title && (
-              <>
-                <span className="text-gray-400">›</span>
-                <span className="text-gray-700">
-                  {post.categories[0].title}
+              <span className="text-gray-400">›</span>
+
+              <Link href="/blog" className="hover:text-gray-900">
+                Blog
+              </Link>
+
+              {post.categories?.[0]?.title && (
+                <>
+                  <span className="text-gray-400">›</span>
+                  <span className="text-gray-700">
+                    {post.categories[0].title}
+                  </span>
+                </>
+              )}
+            </div>
+
+            {/* Title */}
+            <h1 className="text-[42px] md:text-[52px] xl:text-[60px] font-medium text-gray-900 leading-[1.05] tracking-tight mb-8 font-inter">
+              {post.title}
+            </h1>
+
+            {/* Author row */}
+            <div className="flex items-center gap-4 text-sm">
+              {post.author?.image?.asset?.url && (
+                <div className="relative w-9 h-9 rounded-full overflow-hidden">
+                  <Image
+                    src={post.author.image.asset.url}
+                    alt={post.author.name}
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+              )}
+
+              <div className="flex items-center gap-2 text-sm">
+                <span className="font-medium text-gray-900">
+                  {post.author?.name}
                 </span>
-              </>
-            )}
-          </div>
-
-          {/* Title */}
-          <h1 className="text-[40px] md:text-[50px] font-semibold text-gray-900 leading-[1.05] tracking-tight mb-8">
-            {post.title}
-          </h1>
-
-          {/* Author row */}
-          <div className="flex items-center gap-4 text-[15px] mb-12">
-            {post.author?.image?.asset?.url && (
-              <div className="relative w-10 h-10 rounded-full overflow-hidden">
-                <Image
-                  src={post.author.image.asset.url}
-                  alt={post.author.name}
-                  fill
-                  className="object-cover"
-                />
+                <span className="text-gray-400">|</span>
+                <span>
+                  {new Date(post.publishedAt).toLocaleDateString("en-US", {
+                    year: "numeric",
+                    month: "long",
+                    day: "numeric",
+                  })}
+                </span>
               </div>
-            )}
-
-            <div className="flex items-center gap-2">
-              <span className="font-medium text-gray-900">
-                {post.author?.name}
-              </span>
-              <span className="text-gray-400">|</span>
-              <span>
-                {new Date(post.publishedAt).toLocaleDateString("en-US", {
-                  year: "numeric",
-                  month: "long",
-                  day: "numeric",
-                })}
-              </span>
             </div>
           </div>
 
-          {/* Featured Image */}
+          {/* RIGHT IMAGE */}
           {post.mainImage?.asset?.url && (
             <div className="relative w-full aspect-video rounded-xl overflow-hidden border border-gray-200">
               <Image
@@ -372,61 +440,79 @@ export default async function SingleBlogPage({
           )}
         </div>
 
-        {/* ===== ARTICLE ===== */}
-        <div className="max-w-3xl mx-auto">
-          <article>
-            <AISummarizeCard />
-            <PortableText value={post.body} components={portableComponents} />
-          </article>
+        {/* ===== CONTENT AREA ===== */}
+        <div className="grid grid-cols-1 lg:grid-cols-[260px_1fr] gap-14">
+          {/* SIDEBAR */}
+          <div className="hidden lg:block">
+            <div className="sticky top-[100px] space-y-6 max-h-[calc(100vh-120px)] overflow-y-auto">
+              <BlogTOCWithProgress headings={headings} />
+            </div>
+          </div>
+
+          {/* ARTICLE */}
+          <div>
+            <article>
+              <AISummarizeCard />
+              <PortableText value={post.body} components={portableComponents} />
+            </article>
+          </div>
         </div>
 
         {/* ===== RELATED POSTS ===== */}
         {relatedPosts.length > 0 && (
-          <div className="mt-40">
-            <h2 className="text-[27px] font-semibold text-gray-900 mb-12">
+          <div className="mt-36">
+            <h2 className="text-3xl font-medium text-gray-900 mb-10">
               Related Articles
             </h2>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-16">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
               {relatedPosts.map((p: any) => (
                 <Link
                   key={p.slug.current}
                   href={`/blog/${p.slug.current}`}
-                  className="group block"
+                  className="group block rounded-xl border border-gray-200 overflow-hidden transition"
                 >
-                  {/* Image */}
+                  {/* Thumbnail */}
                   {p.mainImage?.asset?.url && (
-                    <div className="relative w-full aspect-video overflow-hidden rounded-lg mb-4">
+                    <div className="relative w-full aspect-video overflow-hidden">
                       <Image
                         src={p.mainImage.asset.url}
                         alt={p.title}
                         fill
-                        className="object-cover transition-transform duration-500 group-hover:scale-[1.04]"
+                        className="object-cover transition-transform duration-500 group-hover:scale-[1.05]"
                       />
                     </div>
                   )}
 
-                  {/* Date */}
-                  <div className="text-sm text-gray-500 mb-2">
-                    {new Date(p.publishedAt).toLocaleDateString("en-US", {
-                      year: "numeric",
-                      month: "short",
-                      day: "numeric",
-                    })}
-                  </div>
+                  <div className="p-6">
+                    {/* Category (if exists) */}
+                    {p.categories?.[0]?.title && (
+                      <div className="inline-block mb-3 px-3 py-1 rounded-md text-xs bg-blue-50 text-blue-700">
+                        {p.categories[0].title}
+                      </div>
+                    )}
 
-                  {/* Title */}
-                  <h3 className="text-[20px] leading-snug font-semibold text-gray-900 mb-2 transition-colors group-hover:underline">
-                    {p.title}
-                  </h3>
+                    {/* Title */}
+                    <h3 className="text-[20px] leading-snug font-medium text-gray-900 mb-2 group-hover:text-blue-700">
+                      {p.title}
+                    </h3>
+
+                    {/* Date */}
+                    <div className="text-xs text-gray-600">
+                      {new Date(p.publishedAt).toLocaleDateString("en-US", {
+                        year: "numeric",
+                        month: "short",
+                        day: "numeric",
+                      })}
+                    </div>
+                  </div>
                 </Link>
               ))}
             </div>
           </div>
         )}
 
-        {/* ===== CTA ===== */}
-        <CTASection />
+        <FAQSection />
       </div>
     </main>
   );

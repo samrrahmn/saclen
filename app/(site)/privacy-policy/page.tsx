@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import Container from "@/app/components/ui/Container";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy – Saclen Atlas",
+  title: "Privacy Policy – Saclen",
   description:
-    "Privacy Policy of Saclen Atlas. Learn how we collect, use, store, and protect your personal data when you use our website and services.",
+    "Privacy Policy of Saclen. Learn how we collect, use, store, and protect your personal data when you use our website and services.",
 };
 
 export default function PrivacyPolicyPage() {
@@ -26,11 +26,11 @@ export default function PrivacyPolicyPage() {
           <div className="space-y-10 text-gray-700 text-[17px] leading-relaxed">
             <section>
               <p>
-                At Saclen Atlas, we take your privacy seriously. This Privacy
-                Policy explains how we collect, use, store, and protect your
-                personal information when you visit our website, contact us,
-                subscribe to our newsletter, or use our web development, no-code
-                development, and AI automation services.
+                At Saclen, we take your privacy seriously. This Privacy Policy
+                explains how we collect, use, store, and protect your personal
+                information when you visit our website, contact us, subscribe to
+                our newsletter, or use our web development, no-code development,
+                and AI automation services.
               </p>
               <p className="mt-4">
                 By using our website or services, you agree to the practices

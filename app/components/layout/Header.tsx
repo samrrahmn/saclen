@@ -21,7 +21,7 @@ export default function Header() {
               height={32}
               className="object-cover"
             />
-            <span className="text-2xl font-medium font-display">Atlas</span>
+            <span className="text-2xl font-medium font-display">Saclen</span>
           </Link>
 
           {/* Desktop Menu */}
@@ -35,11 +35,7 @@ export default function Header() {
             <Link href="/blog" className="font-medium hover:text-primary">
               Blog
             </Link>
-            <Link
-              href="https://www.saclen.com/support"
-              target="_blank"
-              className="font-medium hover:text-primary"
-            >
+            <Link href="/support" className="font-medium hover:text-primary">
               Support
             </Link>
           </div>
@@ -96,8 +92,7 @@ export default function Header() {
               Blog
             </Link>
             <Link
-              href="https://www.saclen.com/support"
-              target="_blank"
+              href="/support"
               onClick={() => setOpen(false)}
               className="font-medium py-3 block hover:text-primary"
             >

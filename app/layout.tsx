@@ -5,11 +5,11 @@ import "@fortawesome/fontawesome-free/css/all.min.css";
 
 export const metadata: Metadata = {
   title: {
-    default: "Saclen Atlas — Building intelligent systems",
-    template: "%s — Saclen Atlas",
+    default: "Saclen — Building intelligent systems",
+    template: "%s — Saclen",
   },
   description:
-    "Saclen Atlas is a web development and AI automation agency helping businesses build modern websites, custom systems, and intelligent automation to scale faster and operate more efficiently.",
+    "Saclen is a web development and AI automation agency helping businesses build modern websites, custom systems, and intelligent automation to scale faster and operate more efficiently.",
 
   keywords: [
     "web development agency",
@@ -20,21 +20,21 @@ export const metadata: Metadata = {
     "dashboard development",
     "internal tools",
     "workflow automation",
-    "saclen atlas",
+    "saclen",
   ],
 
   openGraph: {
-    title: "Saclen Atlas — Web Development & AI Automation Agency",
+    title: "Saclen — Web Development & AI Automation Agency",
     description:
       "We design and build modern websites, custom business systems, and AI-powered automation to help companies run and scale their business from one intelligent platform.",
     url: "https://atlas.saclen.com",
-    siteName: "Saclen Atlas",
+    siteName: "Saclen",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Saclen Atlas — Web Development & AI Automation Agency",
+        alt: "Saclen — Web Development & AI Automation Agency",
       },
     ],
     type: "website",
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
 
   twitter: {
     card: "summary_large_image",
-    title: "Saclen Atlas — Web Development & AI Automation Agency",
+    title: "Saclen — Web Development & AI Automation Agency",
     description:
       "We build modern websites, custom dashboards, and AI automation systems for growing businesses.",
     images: ["/og-image.png"],

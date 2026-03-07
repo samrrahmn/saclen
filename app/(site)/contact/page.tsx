@@ -94,8 +94,8 @@ export default function ContactPage() {
                         height={30}
                       />
                     </div>
-                    <span className="text-lg font-semibold text-gray-900">
-                      Saclen Atlas
+                    <span className="text-xl font-semibold text-gray-900">
+                      Saclen
                     </span>
                   </div>
 

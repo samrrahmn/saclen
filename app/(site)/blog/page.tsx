@@ -4,7 +4,6 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { client } from "@/lib/sanityClient";
-import Container from "@/app/components/ui/Container";
 
 export const metadata: Metadata = {
   title: "Blog",
@@ -59,51 +58,58 @@ export default async function BlogPage() {
 
   return (
     <main className="py-28 bg-white">
-      <Container>
-        <div>
-          {/* ===== POSTS GRID ===== */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-[60px] gap-y-16">
-            {posts.map((post) => (
-              <Link
-                key={post._id}
-                href={`/blog/${post.slug.current}`}
-                className="group block"
-              >
-                {/* Image */}
-                {post.mainImage?.asset?.url && (
-                  <div className="relative w-full aspect-video overflow-hidden rounded-lg mb-4">
-                    <Image
-                      src={post.mainImage.asset.url}
-                      alt={post.mainImage.alt || post.title}
-                      fill
-                      className="object-cover transition-transform duration-500 group-hover:scale-[1.04]"
-                    />
+      <div className="max-w-7xl mx-auto px-6">
+        {/* ===== POSTS GRID ===== */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+          {posts.map((post) => (
+            <Link
+              key={post._id}
+              href={`/blog/${post.slug.current}`}
+              className="group block rounded-xl border border-gray-200 overflow-hidden transition bg-white"
+            >
+              {/* Thumbnail */}
+              {post.mainImage?.asset?.url && (
+                <div className="relative w-full aspect-video overflow-hidden">
+                  <Image
+                    src={post.mainImage.asset.url}
+                    alt={post.mainImage.alt || post.title}
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-[1.05]"
+                  />
+                </div>
+              )}
+
+              <div className="p-6">
+                {/* Category */}
+                {post.categories?.[0]?.title && (
+                  <div className="inline-block mb-3 px-3 py-1 rounded-md text-xs bg-blue-50 text-blue-700 font-inter">
+                    {post.categories[0].title}
                   </div>
                 )}
 
+                {/* Title */}
+                <h2 className="text-2xl leading-snug font-medium text-gray-900 mb-2 group-hover:text-blue-700 font-inter">
+                  {post.title}
+                </h2>
+
+                {/* Excerpt */}
+                <p className="text-md leading-relaxed text-gray-600 line-clamp-3 mb-4 font-inter">
+                  {getExcerpt(post.body || [], 140)}
+                </p>
+
                 {/* Date */}
-                <div className="text-sm text-gray-500 mb-2">
+                <div className="text-xs text-gray-500">
                   {new Date(post.publishedAt).toLocaleDateString("en-US", {
                     year: "numeric",
                     month: "short",
                     day: "numeric",
                   })}
                 </div>
-
-                {/* Title */}
-                <h2 className="text-[20px] leading-snug font-semibold text-gray-900 mb-2 transition-colors group-hover:underline">
-                  {post.title}
-                </h2>
-
-                {/* Excerpt */}
-                <p className="text-[15px] leading-relaxed text-gray-600 line-clamp-2">
-                  {getExcerpt(post.body || [], 140)}
-                </p>
-              </Link>
-            ))}
-          </div>
+              </div>
+            </Link>
+          ))}
         </div>
-      </Container>
+      </div>
     </main>
   );
 }
