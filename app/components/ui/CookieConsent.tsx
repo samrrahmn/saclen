@@ -72,7 +72,7 @@ export default function CookieConsent() {
 
               <button
                 onClick={acceptAll}
-                className="h-10 px-5 rounded-md bg-black text-white text-sm font-medium hover:opacity-90 transition"
+                className="h-10 px-5 rounded-md bg-black hover:bg-primary text-white text-sm font-medium hover:opacity-90 transition"
               >
                 Accept
               </button>
@@ -122,7 +122,7 @@ export default function CookieConsent() {
 
               <button
                 onClick={savePreferences}
-                className="h-10 px-5 rounded-md bg-black text-white text-sm font-medium hover:opacity-90 transition"
+                className="h-10 px-5 rounded-md bg-black hover:bg-primary text-white text-sm font-medium hover:opacity-90 transition"
               >
                 Save preferences
               </button>
