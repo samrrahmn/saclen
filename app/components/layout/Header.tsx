@@ -29,7 +29,7 @@ export default function Header() {
             <Link href="/" className="font-medium hover:text-primary">
               Home
             </Link>
-            <Link href="#services" className="font-medium hover:text-primary">
+            <Link href="/#services" className="font-medium hover:text-primary">
               Services
             </Link>
             <Link href="/blog" className="font-medium hover:text-primary">
@@ -78,7 +78,7 @@ export default function Header() {
               Home
             </Link>
             <Link
-              href="#services"
+              href="/#services"
               onClick={() => setOpen(false)}
               className="font-medium py-3 block hover:text-primary"
             >
