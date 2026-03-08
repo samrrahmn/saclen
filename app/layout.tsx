@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     title: "Saclen — Web Development & AI Automation Agency",
     description:
       "We design and build modern websites, custom business systems, and AI-powered automation to help companies run and scale their business from one intelligent platform.",
-    url: "https://atlas.saclen.com",
+    url: "https://saclen.com",
     siteName: "Saclen",
     images: [
       {
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     icon: "/favicon.ico",
   },
 
-  metadataBase: new URL("https://atlas.saclen.com"),
+  metadataBase: new URL("https://saclen.com"),
 };
 
 export default function RootLayout({
