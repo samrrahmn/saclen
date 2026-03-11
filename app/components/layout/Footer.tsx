@@ -27,13 +27,14 @@ export default function Footer() {
 
       const data = await res.json();
 
-      if (data.success) {
+      if (res.ok && data.success) {
         setStatus("success");
         setEmail("");
       } else {
         setStatus("error");
       }
     } catch (err) {
+      console.error(err);
       setStatus("error");
     } finally {
       setLoading(false);
@@ -44,9 +45,7 @@ export default function Footer() {
     <footer className="border-t border-gray-200 bg-white">
       <Container>
         <div className="py-20">
-          {/* Top */}
           <div className="flex flex-col gap-10 md:flex-row justify-between">
-            {/* Newsletter */}
             <div className="flex flex-col gap-5 max-w-md" id="newsletter">
               <h1 className="text-[26px] font-semibold text-black">
                 Join Our Newsletter
@@ -81,7 +80,6 @@ export default function Footer() {
               </form>
             </div>
 
-            {/* Explore */}
             <div>
               <h4 className="text-[17px] font-medium mb-4 text-black">
                 Explore
@@ -99,7 +97,6 @@ export default function Footer() {
               </ul>
             </div>
 
-            {/* Resources */}
             <div>
               <h4 className="text-[17px] font-medium mb-4 text-black">
                 Resources
@@ -117,7 +114,6 @@ export default function Footer() {
               </ul>
             </div>
 
-            {/* Legal */}
             <div>
               <h4 className="text-[17px] font-medium mb-4 text-black">
                 Policies
@@ -136,17 +132,13 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Divider */}
           <div className="h-px w-full bg-gray-200 my-10"></div>
 
-          {/* Bottom */}
           <div className="flex flex-wrap md:flex-row gap-8 justify-between items-center">
-            {/* Left */}
             <p className="text-[15px] text-gray-600">
               © 2026, Saclen LLC, All Rights Reserved.
             </p>
 
-            {/* Right Icons */}
             <div className="flex gap-6 text-black text-[22px]">
               <a
                 href="mailto:hello@saclen.com"
@@ -156,6 +148,7 @@ export default function Footer() {
               </a>
               <a
                 target="_blank"
+                rel="noopener noreferrer"
                 href="https://facebook.com/thesaclen"
                 className="hover:opacity-70 transition"
               >
@@ -163,6 +156,7 @@ export default function Footer() {
               </a>
               <a
                 target="_blank"
+                rel="noopener noreferrer"
                 href="https://x.com/saclen_dev"
                 className="hover:opacity-70 transition"
               >
@@ -170,6 +164,7 @@ export default function Footer() {
               </a>
               <a
                 target="_blank"
+                rel="noopener noreferrer"
                 href="https://www.linkedin.com/company/saclen"
                 className="hover:opacity-70 transition"
               >

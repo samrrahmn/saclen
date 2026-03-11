@@ -16,7 +16,7 @@ export async function POST(req: Request) {
       },
       body: JSON.stringify({
         email,
-        listIds: [14],
+        listIds: [Number(process.env.BREVO_LIST_ID)],
         updateEnabled: true,
       }),
     });
