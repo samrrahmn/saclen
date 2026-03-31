@@ -89,7 +89,7 @@ export default function ContactPage() {
                     <div className="flex items-center justify-center">
                       <Image
                         src="/logo.png"
-                        alt="Saclen Atlas"
+                        alt="Saclen"
                         width={30}
                         height={30}
                       />

@@ -67,7 +67,7 @@ export default function CompareSection() {
             </ul>
           </div>
 
-          {/* Saclen Atlas */}
+          {/* Saclen */}
           <div className="rounded-xl bg-primary p-8 text-white relative overflow-hidden">
             {/* Top brand */}
             <div className="text-[13px] font-semibold uppercase tracking-widest text-white/80">
