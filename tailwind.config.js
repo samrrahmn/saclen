@@ -4,7 +4,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: "#0150FF",
+        primary: "#8ff23d",
       },
       fontFamily: {
         poppins: ["Poppins", "sans-serif"],

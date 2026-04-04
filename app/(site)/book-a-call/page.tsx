@@ -12,14 +12,6 @@ export default function BookACallPage() {
         theme: "light",
         layout: "month_view",
         hideEventTypeDetails: false,
-        cssVarsPerTheme: {
-          light: {
-            "cal-brand": "#0050FE",
-          },
-          dark: {
-            "cal-brand": "#0050FE",
-          },
-        },
       });
     })();
   }, []);
@@ -28,7 +20,7 @@ export default function BookACallPage() {
     <main className="min-h-screen w-full bg-gradient-to-b from-slate-50 via-blue-50/40 to-transparent">
       <div className="max-w-7xl mx-auto px-6 py-16">
         {/* Heading */}
-        <div className="max-w-3xl mx-auto text-center my-12">
+        <div className="max-w-2xl mx-auto text-center my-12">
           <h1 className="text-[28px] sm:text-[36px] md:text-[44px] font-semibold leading-[1.1] text-gray-900">
             Book a Free Strategy Call
           </h1>

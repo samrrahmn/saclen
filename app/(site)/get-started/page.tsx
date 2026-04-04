@@ -42,7 +42,7 @@ export default function ContactPage() {
       <Container>
         <div className="max-w-[920px] mx-auto">
           {/* Heading */}
-          <div className="max-w-xl mx-auto text-center my-12">
+          <div className="max-w-lg mx-auto text-center my-12">
             <h1 className="text-[28px] sm:text-[36px] md:text-[44px] font-semibold leading-[1.1] text-gray-900">
               Start Your Project
             </h1>
@@ -248,7 +248,7 @@ export default function ContactPage() {
                     <button
                       type="submit"
                       disabled={status === "loading"}
-                      className="py-2 px-4 rounded-xl text-white text-sm font-medium bg-primary border border-[#6596ff]"
+                      className="py-2 px-4 rounded-xl text-black text-sm font-medium bg-primary"
                     >
                       {status === "loading" ? "Sending..." : "Confirm"}
                     </button>

@@ -67,7 +67,7 @@ export default function Footer() {
                 <button
                   type="submit"
                   disabled={loading}
-                  className="bg-primary text-white px-5 h-[44px] rounded-md text-[15px] font-medium disabled:opacity-60"
+                  className="bg-primary text-black px-5 h-[44px] rounded-md text-[15px] font-medium disabled:opacity-60"
                 >
                   {loading
                     ? "Subscribing..."
