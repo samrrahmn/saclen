@@ -248,7 +248,7 @@ export default function ContactPage() {
                     <button
                       type="submit"
                       disabled={status === "loading"}
-                      className="py-2 px-4 rounded-xl text-black text-sm font-medium bg-primary"
+                      className="py-2 px-4 rounded-xl text-white text-sm font-medium bg-black"
                     >
                       {status === "loading" ? "Sending..." : "Confirm"}
                     </button>

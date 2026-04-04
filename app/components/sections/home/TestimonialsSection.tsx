@@ -61,7 +61,7 @@ function Column({ speed }: { speed: number }) {
         return (
           <div
             key={i}
-            className="rounded-2xl border border-gray-200 bg-white p-6 h-[280px] flex flex-col"
+            className="rounded-2xl border border-gray-200 bg-gray-50 p-6 h-[280px] flex flex-col"
           >
             <div className="flex items-center gap-3">
               <div
