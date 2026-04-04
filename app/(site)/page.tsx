@@ -5,7 +5,6 @@ import TrustedSlider from "@/app/components/sections/shared/TrustedSlider";
 import ServiceSection from "@/app/components/sections/home/ServiceSection";
 import DemoDashboardSection from "@/app/components/sections/home/DemoDashboardSection";
 import TestimonialsSection from "@/app/components/sections/home/TestimonialsSection";
-import CompareSection from "@/app/components/sections/home/CompareSection";
 
 export default function Home() {
   return (
@@ -15,7 +14,6 @@ export default function Home() {
       <ServiceSection />
       <TestimonialsSection />
       <DemoDashboardSection />
-      <CompareSection />
       <FAQSection />
       <CTASection />
     </main>

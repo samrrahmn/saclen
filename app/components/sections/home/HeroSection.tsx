@@ -26,8 +26,7 @@ export default function HeroSection() {
 
         {/* Heading */}
         <h1 className="text-4xl font-semibold font-inter leading-snug mt-4 sm:text-6xl">
-          Building <span className="text-primary">intelligent</span> systems for
-          businesses
+          Building intelligent systems for businesses
         </h1>
 
         <p className="text-lg mt-4 sm:text-2xl sm:mt-8 text-gray-800">
@@ -38,7 +37,7 @@ export default function HeroSection() {
         {/* Buttons */}
         <div className="mt-12 flex gap-4 flex-col sm:flex-row sm:justify-center w-full">
           <Link href="/book-a-call" className="w-full sm:w-auto">
-            <span className="block text-center px-8 py-3 font-semibold rounded-lg text-white bg-primary hover:bg-black">
+            <span className="block text-center px-8 py-3 font-semibold rounded-lg text-white bg-primary">
               Book a call
             </span>
           </Link>
