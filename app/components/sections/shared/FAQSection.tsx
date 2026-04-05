@@ -38,10 +38,10 @@ export default function FAQSection() {
       <Container>
         {/* Heading */}
         <div className="text-center max-w-2xl mx-auto mb-12">
-          <h2 className="text-[28px] sm:text-[36px] md:text-[44px] font-semibold leading-[1.1] text-gray-900">
+          <h2 className="text-[28px] sm:text-[36px] font-semibold leading-[1.1] text-gray-900">
             Frequently asked questions
           </h2>
-          <p className="mt-4 text-[16px] sm:text-[18px] text-gray-600 leading-[1.7]">
+          <p className="mt-4 text-[16px] text-gray-600 leading-[1.7]">
             Everything you need to know about our web development and AI
             automation services before getting started.
           </p>

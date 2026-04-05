@@ -59,12 +59,12 @@ export default function ServicesSection() {
       <Container>
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto mb-20">
-          <h2 className="text-[28px] sm:text-[36px] md:text-[44px] font-semibold leading-[1.1] text-gray-900">
-            Build smarter digital systems for your business
+          <h2 className="text-[28px] sm:text-[36px] font-semibold leading-[1.1] text-gray-900">
+            Simple Packages. Powerful Results.
           </h2>
-          <p className="mt-4 text-[16px] sm:text-[18px] text-gray-600 leading-[1.7]">
-            We design and build modern websites and automation systems to
-            improve efficiency and help your business run smoothly.
+          <p className="mt-4 text-[16px] text-gray-600 leading-[1.7]">
+            Get started fast or work with us to build a fully custom automation
+            system.
           </p>
         </div>
 
