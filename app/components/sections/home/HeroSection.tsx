@@ -1,11 +1,8 @@
 "use client";
 
-import { useEffect } from "react";
 import Link from "next/link";
 
 export default function HeroSection() {
-  useEffect(() => {}, []);
-
   return (
     <section
       id="hero"
@@ -13,18 +10,6 @@ export default function HeroSection() {
     >
       {/* Top Content */}
       <div className="max-w-4xl mx-auto px-6 pt-[50px] pb-16 flex flex-col sm:items-center sm:text-center sm:pt-[80px] sm:max-w-3xl">
-        {/* Badge */}
-        <div className="flex items-center my-6 gap-2 border border-yellow-300 bg-yellow-50 rounded-lg px-3 py-1 w-fit shadow-md hover:shadow-lg hover:-translate-y-1 transition group">
-          <div className="w-2 h-2 bg-yellow-400 rounded-full border border-yellow-600" />
-          <p className="font-medium text-yellow-600">
-            <span className="text-yellow-800">
-              Digital Systems & Automation
-            </span>
-          </p>
-          <i className="fa-solid fa-arrow-right text-yellow-600 group-hover:translate-x-1 transition duration-300" />
-        </div>
-
-        {/* Heading */}
         <h1 className="text-4xl font-semibold font-inter leading-snug mt-4 sm:text-6xl">
           Building intelligent systems for businesses
         </h1>
@@ -34,7 +19,6 @@ export default function HeroSection() {
           automation systems to improve operations.
         </p>
 
-        {/* Buttons */}
         <div className="mt-12 flex gap-4 flex-col sm:flex-row sm:justify-center w-full">
           <Link href="/book-a-call" className="w-full sm:w-auto">
             <span className="block text-center px-8 py-3 font-semibold rounded-lg text-black bg-primary">
@@ -47,6 +31,21 @@ export default function HeroSection() {
               Contact Us
             </span>
           </Link>
+        </div>
+      </div>
+
+      {/* Video */}
+      <div className="max-w-6xl mx-auto px-4 pb-24">
+        <div className="rounded-2xl border border-gray-200 bg-white overflow-hidden">
+          <video
+            src="/video/video.mov"
+            autoPlay
+            loop
+            muted
+            playsInline
+            preload="auto"
+            className="w-full h-full object-cover"
+          />
         </div>
       </div>
     </section>
