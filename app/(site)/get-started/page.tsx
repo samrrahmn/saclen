@@ -88,7 +88,7 @@ export default function ContactPage() {
                   <div className="flex items-center gap-3">
                     <div className="flex items-center justify-center">
                       <Image
-                        src="/logo.png"
+                        src="/logo.webp"
                         alt="Saclen"
                         width={30}
                         height={30}

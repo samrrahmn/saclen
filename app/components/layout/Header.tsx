@@ -13,7 +13,7 @@ export default function Header() {
         <div className="py-3 flex justify-between items-center">
           <Link href="/" className="flex gap-2 items-center flex-1">
             <Image
-              src="/logo.png"
+              src="/logo.webp"
               alt="Saclen"
               width={32}
               height={32}
