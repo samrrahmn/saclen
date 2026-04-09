@@ -38,14 +38,19 @@ export default function HeroSection() {
       <div className="max-w-6xl mx-auto px-4 pb-24">
         <div className="rounded-2xl border border-gray-200 bg-white overflow-hidden">
           <video
-            src="/video/video.mov"
             autoPlay
             loop
             muted
             playsInline
             preload="auto"
+            poster="/hero-video-poster.webp"
             className="w-full h-full object-cover"
-          />
+          >
+            <source
+              src="https://res.cloudinary.com/dqdlakwqs/video/upload/f_auto,q_auto:best/v1775742376/video_kvymlx.mp4"
+              type="video/mp4"
+            />
+          </video>
         </div>
       </div>
     </section>
