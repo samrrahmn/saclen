@@ -127,7 +127,7 @@ export default function BlogTOCWithProgress({
           <div className="h-1 w-full bg-gray-100 rounded-full overflow-hidden">
             <div
               ref={progressRef}
-              className="h-full bg-blue-600 transition-[width] duration-150 ease-out"
+              className="h-full bg-primary transition-[width] duration-150 ease-out"
               style={{ width: "0%" }}
             />
           </div>
@@ -157,7 +157,7 @@ export default function BlogTOCWithProgress({
                   ref={isActive ? activeItemRef : null}
                   className={`block text-sm leading-snug transition-all border-l-2 pl-3 ${
                     isActive
-                      ? "text-blue-600 border-blue-600 font-medium"
+                      ? "text-primary border-primary font-medium"
                       : "text-gray-600 border-transparent hover:text-gray-900"
                   }`}
                 >
