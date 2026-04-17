@@ -261,9 +261,9 @@ const portableComponents = {
                                 className="
                               max-w-none
                               text-[15px] leading-relaxed
-                              [&_a]:text-blue-600
+                              [&_a]:text-green-600
                               [&_a]:underline
-                              [&_a:hover]:text-blue-700
+                              [&_a:hover]:text-green-700
                               [&_code]:text-black
                               [&_strong]:font-semibold
                             "
@@ -296,7 +296,7 @@ const portableComponents = {
           href={value?.href}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-blue-600 hover:text-blue-700 underline underline-offset-4"
+          className="text-green-600 hover:text-green-700 underline underline-offset-4"
         >
           {children}
         </a>
@@ -487,13 +487,13 @@ export default async function SingleBlogPage({
                   <div className="p-6">
                     {/* Category (if exists) */}
                     {p.categories?.[0]?.title && (
-                      <div className="inline-block mb-3 px-3 py-1 rounded-md text-xs bg-blue-50 text-blue-700">
+                      <div className="inline-block mb-3 px-3 py-1 rounded-md text-xs bg-green-50 text-primary">
                         {p.categories[0].title}
                       </div>
                     )}
 
                     {/* Title */}
-                    <h3 className="text-[20px] leading-snug font-medium text-gray-900 mb-2 group-hover:text-blue-700">
+                    <h3 className="text-[20px] leading-snug font-medium text-gray-900 mb-2 group-hover:text-primary">
                       {p.title}
                     </h3>
 

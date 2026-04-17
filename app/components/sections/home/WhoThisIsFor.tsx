@@ -43,7 +43,7 @@ export default function WhoThisIsFor() {
 
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           <Card
-            icon={<Briefcase className="h-7 w-7 text-blue-600" />}
+            icon={<Briefcase className="h-7 w-7 text-green-600" />}
             title="You're Running a Growing Business"
             description="Your operations are getting complex as you scale. Manual work is slowing you down and systems can’t keep up anymore."
           />

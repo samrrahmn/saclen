@@ -6,7 +6,7 @@ export default function HeroSection() {
   return (
     <section
       id="hero"
-      className="bg-gradient-to-b from-slate-50 via-blue-50/40 to-transparent"
+      className="bg-gradient-to-b from-slate-50 via-green-50/40 to-transparent"
     >
       {/* Top Content */}
       <div className="max-w-4xl mx-auto px-6 pt-[50px] pb-16 flex flex-col sm:items-center sm:text-center sm:pt-[80px] sm:max-w-3xl">

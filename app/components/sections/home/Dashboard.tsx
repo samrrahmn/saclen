@@ -122,8 +122,8 @@ export default function DemoDashboard() {
             title="Total Orders"
             value="142"
             growth="8.2%"
-            icon={<ShoppingBag className="h-5 w-5 text-blue-600" />}
-            iconBg="bg-blue-100"
+            icon={<ShoppingBag className="h-5 w-5 text-green-600" />}
+            iconBg="bg-green-100"
           />
           <StatCard
             title="Active Users"
