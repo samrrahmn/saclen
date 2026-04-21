@@ -70,7 +70,7 @@ export default function CookieConsent() {
 
           <button
             onClick={acceptAll}
-            className="h-10 px-5 rounded-md bg-black text-white text-sm hover:opacity-90 transition"
+            className="h-10 px-5 rounded-md bg-black text-white hover:bg-primary text-sm hover:opacity-90 transition"
           >
             Accept
           </button>

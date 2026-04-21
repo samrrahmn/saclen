@@ -14,7 +14,7 @@ function Card({
 }) {
   return (
     <div className="rounded-xl border border-gray-200 bg-gray-50 p-7 text-center">
-      <div className="mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-full bg-lime-100">
+      <div className="mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-full bg-blue-100">
         {icon}
       </div>
       <h3 className="text-[18px] font-semibold text-gray-900 leading-[1.3]">
@@ -43,7 +43,7 @@ export default function WhoThisIsFor() {
 
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           <Card
-            icon={<Briefcase className="h-7 w-7 text-green-600" />}
+            icon={<Briefcase className="h-7 w-7 text-blue-600" />}
             title="You're Running a Growing Business"
             description="Your operations are getting complex as you scale. Manual work is slowing you down and systems can’t keep up anymore."
           />

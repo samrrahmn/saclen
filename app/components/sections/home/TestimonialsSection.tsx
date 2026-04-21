@@ -111,7 +111,7 @@ export default function TestimonialsSection() {
 
             <Link
               href="/upwork"
-              className="text-black font-medium underline underline-offset-4 decoration-green-500"
+              className="text-black font-medium underline underline-offset-4 decoration-blue-500"
             >
               View all reviews on Upwork
             </Link>

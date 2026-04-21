@@ -82,7 +82,7 @@ export default async function BlogPage() {
               <div className="p-6">
                 {/* Category */}
                 {post.categories?.[0]?.title && (
-                  <div className="inline-block mb-3 px-3 py-1 rounded-md text-xs bg-green-50 text-green-700 font-inter">
+                  <div className="inline-block mb-3 px-3 py-1 rounded-md text-xs bg-blue-50 text-blue-700 font-inter">
                     {post.categories[0].title}
                   </div>
                 )}

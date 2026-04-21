@@ -38,7 +38,7 @@ export default function ContactPage() {
   }
 
   return (
-    <main className="py-24 bg-gradient-to-b from-slate-50 via-green-50/40 to-transparent">
+    <main className="py-24 bg-gradient-to-b from-slate-50 via-blue-50/40 to-transparent">
       <Container>
         <div className="max-w-[920px] mx-auto">
           {/* Heading */}
@@ -56,8 +56,8 @@ export default function ContactPage() {
           {status === "success" ? (
             <div className="border border-gray-200 rounded-lg bg-white p-10 text-center">
               <div className="flex justify-center mb-4">
-                <div className="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center">
-                  <i className="fa-solid fa-check text-green-600"></i>
+                <div className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center">
+                  <i className="fa-solid fa-check text-blue-600"></i>
                 </div>
               </div>
 
@@ -72,7 +72,7 @@ export default function ContactPage() {
 
               <button
                 onClick={() => setStatus("idle")}
-                className="mt-6 text-sm text-green-600 hover:underline"
+                className="mt-6 text-sm text-blue-600 hover:underline"
               >
                 Send another message
               </button>
@@ -88,7 +88,7 @@ export default function ContactPage() {
                   <div className="flex items-center gap-3">
                     <div className="flex items-center justify-center">
                       <Image
-                        src="/logo.webp"
+                        src="/logo.png"
                         alt="Saclen"
                         width={30}
                         height={30}

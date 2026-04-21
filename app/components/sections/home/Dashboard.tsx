@@ -83,17 +83,7 @@ export default function DemoDashboard() {
   }, []);
 
   return (
-    <div className="relative">
-      <div className="absolute inset-0 z-10 flex items-center justify-center rounded-xl bg-black/50">
-        <div className="bg-black/80 py-6 px-8 rounded-lg">
-          <a href="/book-a-call">
-            <button className="bg-primary text-black font-medium px-7 py-3.5 rounded-md shadow-lg transition-transform duration-200 hover:scale-105">
-              Book a Call
-            </button>
-          </a>
-        </div>
-      </div>
-
+    <div>
       <div className="rounded-xl border border-gray-200 bg-gray-50 p-6">
         <div className="mb-6 flex items-start sm:items-center justify-between gap-3">
           <div>
@@ -122,8 +112,8 @@ export default function DemoDashboard() {
             title="Total Orders"
             value="142"
             growth="8.2%"
-            icon={<ShoppingBag className="h-5 w-5 text-green-600" />}
-            iconBg="bg-green-100"
+            icon={<ShoppingBag className="h-5 w-5 text-blue-600" />}
+            iconBg="bg-blue-100"
           />
           <StatCard
             title="Active Users"

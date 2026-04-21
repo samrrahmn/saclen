@@ -17,7 +17,7 @@ export default function BookACallPage() {
   }, []);
 
   return (
-    <main className="min-h-screen w-full bg-gradient-to-b from-slate-50 via-green-50/40 to-transparent">
+    <main className="min-h-screen w-full bg-gradient-to-b from-slate-50 via-blue-50/40 to-transparent">
       <div className="max-w-7xl mx-auto px-6 py-16">
         {/* Heading */}
         <div className="max-w-2xl mx-auto text-center my-12">

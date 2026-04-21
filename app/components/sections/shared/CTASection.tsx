@@ -5,7 +5,7 @@ export default function CTASection() {
   return (
     <section className="py-20 md:py-24">
       <Container>
-        <div className="rounded-2xl border border-[#BEE7A3] bg-[#EAF6DC] px-6 py-16 md:px-12 md:py-20 text-center">
+        <div className="rounded-2xl border border-[#a3bae7] bg-[#dce7f6] px-6 py-16 md:px-12 md:py-20 text-center">
           {/* Heading */}
           <h2 className="text-[28px] sm:text-[36px] md:text-[48px] leading-[1.1] font-semibold text-black max-w-4xl mx-auto">
             Your Business Is Wasting Time Every Day. Let’s Automate It.
@@ -21,13 +21,13 @@ export default function CTASection() {
           {/* Buttons */}
           <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 w-full">
             <Link href="/book-a-call" className="w-full sm:w-auto">
-              <button className="h-[52px] w-full sm:w-auto px-8 rounded-lg bg-[#7BEA2E] text-black text-[16px] font-medium hover:opacity-90 transition">
+              <button className="h-[52px] w-full sm:w-auto px-8 rounded-lg bg-primary text-white text-[16px] font-medium">
                 Book Your Free Strategy Call
               </button>
             </Link>
 
             <Link href="/case-studies" className="w-full sm:w-auto">
-              <button className="h-[52px] w-full sm:w-auto px-8 text-[16px] font-medium bg-[#1F2937] text-white rounded-lg hover:opacity-90 transition">
+              <button className="h-[52px] w-full sm:w-auto px-8 text-[16px] font-medium bg-black text-white rounded-lg hover:opacity-90 transition">
                 See Automation Systems
               </button>
             </Link>

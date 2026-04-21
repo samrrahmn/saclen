@@ -6,7 +6,7 @@ export default function HeroSection() {
   return (
     <section
       id="hero"
-      className="bg-gradient-to-b from-slate-50 via-green-50/40 to-transparent"
+      className="bg-gradient-to-b from-slate-50 via-blue-50/40 to-transparent"
     >
       {/* Top Content */}
       <div className="max-w-4xl mx-auto px-6 pt-[50px] pb-16 flex flex-col sm:items-center sm:text-center sm:pt-[80px] sm:max-w-3xl">
@@ -21,7 +21,7 @@ export default function HeroSection() {
 
         <div className="mt-12 flex gap-4 flex-col sm:flex-row sm:justify-center w-full">
           <Link href="/book-a-call" className="w-full sm:w-auto">
-            <span className="block text-center px-8 py-3 font-semibold rounded-lg text-black bg-primary">
+            <span className="block text-center px-8 py-3 font-semibold rounded-lg text-white hover:bg-black bg-primary">
               Book a call
             </span>
           </Link>

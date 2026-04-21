@@ -11,18 +11,6 @@ export const metadata: Metadata = {
   description:
     "Saclen is a web development and AI automation agency helping businesses build modern websites, custom systems, and intelligent automation to scale faster and operate more efficiently.",
 
-  keywords: [
-    "web development agency",
-    "ai automation agency",
-    "custom software development",
-    "business automation",
-    "saas development",
-    "dashboard development",
-    "internal tools",
-    "workflow automation",
-    "saclen",
-  ],
-
   openGraph: {
     title: "Saclen — Web Development & AI Automation Agency",
     description:
